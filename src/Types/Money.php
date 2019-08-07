@@ -6,7 +6,7 @@ namespace ChargeHive\Webhooks\Types;
  */
 class Money
 {
-  //Generated at 2019-06-25 11:32:37
+  //Generated at 2019-08-07 15:37:06
 
   /**
    * Amount of money, stored in lowest unit e.g. cents, penies, satoshi

@@ -1,6 +1,6 @@
 <?php
 
-$outputDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'types';
+$outputDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Types';
 if(!file_exists($outputDir))
 {
   mkdir($outputDir);

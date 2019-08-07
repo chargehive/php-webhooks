@@ -3,7 +3,7 @@ namespace ChargeHive\Webhooks\Types;
 
 class Webhook
 {
-  //Generated at 2019-06-25 11:32:37
+  //Generated at 2019-08-07 15:37:06
 
   /**
    * UUID for the notification
@@ -15,10 +15,8 @@ class Webhook
   const TYPE_CHARGECREATED = "chargeCreated";
   const TYPE_CHARGEMODIFIED = "chargeModified";
   const TYPE_CHARGETRANSACTION = "chargeTransaction";
+  const TYPE_CHARGECANCEL = "chargeCancel";
   const TYPE_CHARGECOMPLETE = "chargeComplete";
-  const TYPE_PROFILECREATED = "profileCreated";
-  const TYPE_PROFILEMODIFIED = "profileModified";
-  const TYPE_PROFILEARCHIVED = "profileArchived";
   const TYPE_METHODCREATED = "methodCreated";
   const TYPE_METHODMODIFIED = "methodModified";
   const TYPE_METHODREFRESHED = "methodRefreshed";
@@ -45,7 +43,7 @@ class Webhook
   public $checksum;
 
   /**
-   * Verification of the checksum and your verification key
+   * sha1 of the checksum + verificationKey
    *
    * @var string
    */

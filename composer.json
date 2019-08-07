@@ -7,5 +7,8 @@
     "psr-4": {
       "\\ChargeHive\\Webhooks": "src"
     }
+  },
+  "require-dev": {
+    "swaggest/json-schema": "^0.12.11"
   }
 }

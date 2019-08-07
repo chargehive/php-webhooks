@@ -3,7 +3,7 @@ namespace ChargeHive\Webhooks\Types;
 
 class ChargeCreated
 {
-  //Generated at 2019-06-25 11:32:37
+  //Generated at 2019-08-07 15:37:06
 
   /**
    * Unique ID for the charge that has been created
@@ -12,9 +12,9 @@ class ChargeCreated
    */
   public $chargeUuid;
 
-  const CHARGEINTENT_PROFILE_CREATE = "PROFILE_CREATE";
   const CHARGEINTENT_METHOD_ADD = "METHOD_ADD";
   const CHARGEINTENT_METHOD_REFRESH = "METHOD_REFRESH";
+  const CHARGEINTENT_METHOD_VERIFY = "METHOD_VERIFY";
   const CHARGEINTENT_CAPTURE = "CAPTURE";
   const CHARGEINTENT_REFUND = "REFUND";
   /**
@@ -35,4 +35,25 @@ class ChargeCreated
    * @var Money
    */
   public $amount;
+
+  /**
+   * A keyed array of references assigned to the charge
+   *
+   * @var object
+   */
+  public $references;
+
+  /**
+   * Expiry time of the charge, output as the number of seconds since unix epoch
+   *
+   * @var number
+   */
+  public $expiryTime;
+
+  /**
+   * Unique reference for this charge, as defined by the merchant
+   *
+   * @var string
+   */
+  public $merchantReference;
 }

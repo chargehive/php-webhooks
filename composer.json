@@ -1,0 +1,11 @@
+{
+  "name": "chargehive/php-webhooks",
+  "description": "ChargeHive webhook classes for php",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "\\ChargeHive\\Webhooks": "src"
+    }
+  }
+}

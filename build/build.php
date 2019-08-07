@@ -22,15 +22,19 @@ foreach($files as $file)
   $src[] = '<?php';
   $src[] = 'namespace ChargeHive\\Webhooks\\Types;';
   $src[] = '';
+  $src[] = 'use ChargeHive\\Webhooks\\WebhookFoundation;';
+  $src[] = '';
   if(isset($json->description))
   {
     $src[] = '/**';
     $src[] = ' * ' . $json->description;
     $src[] = ' */';
   }
-  $src[] = 'class ' . $className;
+  $src[] = 'class ' . $className . ' extends WebhookFoundation';
   $src[] = '{';
   $src[] = '  //Generated at ' . date("Y-m-d H:i:s");
+
+  $setters = [];
 
   foreach($json->properties as $property => $propertyDefinition)
   {
@@ -61,6 +65,7 @@ foreach($files as $file)
       $ref = $propertyDefinition->{'$ref'};
       $class = filenameToClass(basename($ref, '.json'));
       $docBlock[] = '   * @var ' . $class;
+      $setters[$property] = "$class::fromSource(\$value)";
     }
 
     if(!empty($docBlock))
@@ -71,6 +76,25 @@ foreach($files as $file)
     }
 
     $src[] = '  public $' . $property . ';';
+  }
+
+  if(!empty($setters))
+  {
+    $src[] = '';
+    $src[] = '  protected function _set($property, $value)';
+    $src[] = '  {';
+    foreach($setters as $property => $setter)
+    {
+      $src[] = '    if($property == \'' . $property . '\')';
+      $src[] = '    {';
+      $src[] = '      $this->' . $property . ' = ' . $setter . ';';
+      $src[] = '      return;';
+      $src[] = '    }';
+      $src[] = '    ';
+    }
+    $src[] = '    parent::_set($property, $value);';
+    $src[] = '  }';
+    $src[] = '';
   }
 
   $src[] = '}';

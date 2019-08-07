@@ -1,12 +1,14 @@
 <?php
 namespace ChargeHive\Webhooks\Types;
 
+use ChargeHive\Webhooks\WebhookFoundation;
+
 /**
  * Representation of a financial amount
  */
-class Money
+class Money extends WebhookFoundation
 {
-  //Generated at 2019-08-07 15:37:06
+  //Generated at 2019-08-07 16:11:58
 
   /**
    * Amount of money, stored in lowest unit e.g. cents, penies, satoshi

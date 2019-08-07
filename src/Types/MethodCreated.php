@@ -1,9 +1,11 @@
 <?php
 namespace ChargeHive\Webhooks\Types;
 
-class MethodCreated
+use ChargeHive\Webhooks\WebhookFoundation;
+
+class MethodCreated extends WebhookFoundation
 {
-  //Generated at 2019-08-07 15:37:06
+  //Generated at 2019-08-07 16:11:58
 
   /**
    * Unique ID for the method that has been created

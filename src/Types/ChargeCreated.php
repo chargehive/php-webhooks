@@ -1,9 +1,11 @@
 <?php
 namespace ChargeHive\Webhooks\Types;
 
-class ChargeCreated
+use ChargeHive\Webhooks\WebhookFoundation;
+
+class ChargeCreated extends WebhookFoundation
 {
-  //Generated at 2019-08-07 15:37:06
+  //Generated at 2019-08-07 16:11:58
 
   /**
    * Unique ID for the charge that has been created
@@ -56,4 +58,16 @@ class ChargeCreated
    * @var string
    */
   public $merchantReference;
+
+  protected function _set($property, $value)
+  {
+    if($property == 'amount')
+    {
+      $this->amount = Money::fromSource($value);
+      return;
+    }
+
+    parent::_set($property, $value);
+  }
+
 }

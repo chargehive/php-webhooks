@@ -1,9 +1,11 @@
 <?php
 namespace ChargeHive\Webhooks\Types;
 
-class Webhook
+use ChargeHive\Webhooks\WebhookFoundation;
+
+class Webhook extends WebhookFoundation
 {
-  //Generated at 2019-08-07 15:37:06
+  //Generated at 2019-08-07 16:11:58
 
   /**
    * UUID for the notification

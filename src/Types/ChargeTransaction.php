@@ -1,9 +1,11 @@
 <?php
 namespace ChargeHive\Webhooks\Types;
 
-class ChargeTransaction
+use ChargeHive\Webhooks\WebhookFoundation;
+
+class ChargeTransaction extends WebhookFoundation
 {
-  //Generated at 2019-08-07 15:37:06
+  //Generated at 2019-08-07 16:11:58
 
   /**
    * Unique ID for the charge that has been transacted

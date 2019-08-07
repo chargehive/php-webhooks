@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ChargeTransaction extends WebhookFoundation
 {
-  //Generated at 2019-08-07 16:11:58
+  //Generated on 2019-08-07
 
   /**
    * Unique ID for the charge that has been transacted
@@ -24,6 +24,13 @@ class ChargeTransaction extends WebhookFoundation
   const PAYMENTMETHODTYPE_CARD = "CARD";
   const PAYMENTMETHODTYPE_PAYPAL = "PAYPAL";
   public $paymentMethodType;
+
+  /**
+   * ID for the payment method token used
+   *
+   * @var string
+   */
+  public $paymentMethodId;
 
   /**
    * Payment Scheme, e.g. Visa, MasterCard, PayPal Business

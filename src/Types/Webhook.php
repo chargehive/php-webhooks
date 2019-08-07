@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class Webhook extends WebhookFoundation
 {
-  //Generated at 2019-08-07 16:11:58
+  //Generated on 2019-08-07
 
   /**
    * UUID for the notification

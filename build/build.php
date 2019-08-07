@@ -32,7 +32,7 @@ foreach($files as $file)
   }
   $src[] = 'class ' . $className . ' extends WebhookFoundation';
   $src[] = '{';
-  $src[] = '  //Generated at ' . date("Y-m-d H:i:s");
+  $src[] = '  //Generated on ' . date("Y-m-d");
 
   $setters = [];
 

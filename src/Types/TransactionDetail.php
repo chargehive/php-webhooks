@@ -70,7 +70,7 @@ class TransactionDetail extends WebhookFoundation
   /**
    * True if the transaction was a succeess
    *
-   * @var bool
+   * @var boolean
    */
   public $wasSuccessful;
 

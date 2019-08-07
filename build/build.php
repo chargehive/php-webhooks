@@ -58,7 +58,24 @@ foreach($files as $file)
 
     if(isset($propertyDefinition->type))
     {
-      $docBlock[] = '   * @var ' . $propertyDefinition->type;
+      if($propertyDefinition->type == "array" && isset($propertyDefinition->items))
+      {
+        if(isset($propertyDefinition->items->{'$ref'}))
+        {
+          $ref = $propertyDefinition->items->{'$ref'};
+          $class = filenameToClass(basename($ref, '.json'));
+          $docBlock[] = '   * @var []' . $class;
+          $setters[$property] = "$class::manyFromSource(\$value)";
+        }
+        else if(isset($propertyDefinition->items->type))
+        {
+          $docBlock[] = '   * @var []' . $propertyDefinition->items->type;
+        }
+      }
+      else
+      {
+        $docBlock[] = '   * @var ' . $propertyDefinition->type;
+      }
     }
     else if(isset($propertyDefinition->{'$ref'}))
     {

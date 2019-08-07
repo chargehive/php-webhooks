@@ -104,7 +104,7 @@ class ChargeTransaction extends WebhookFoundation
   public $liability;
 
   /**
-   * @var array
+   * @var []TransactionDetail
    */
   public $details;
 
@@ -115,13 +115,19 @@ class ChargeTransaction extends WebhookFoundation
       $this->requestedAmount = Money::fromSource($value);
       return;
     }
-    
+
     if($property == 'transactedAmount')
     {
       $this->transactedAmount = Money::fromSource($value);
       return;
     }
-    
+
+    if($property == 'details')
+    {
+      $this->details = TransactionDetail::manyFromSource($value);
+      return;
+    }
+
     parent::_set($property, $value);
   }
 

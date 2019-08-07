@@ -19,6 +19,16 @@ abstract class WebhookFoundation
     return $hook;
   }
 
+  public static function manyFromSource(array $items): array
+  {
+    $result = [];
+    foreach($items as $item)
+    {
+      $result[] = static::fromSource($item);
+    }
+    return $result;
+  }
+
   protected function _set($property, $value)
   {
     $this->{$property} = $value;

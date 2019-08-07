@@ -5,7 +5,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "\\ChargeHive\\Webhooks": "src"
+      "\\ChargeHive\\Webhooks\\": "src/"
     }
   },
   "require-dev": {

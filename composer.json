@@ -5,8 +5,11 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "\\ChargeHive\\Webhooks\\": "src/"
+      "ChargeHive\\Webhooks\\": "src"
     }
+  },
+  "require": {
+    "ext-json": "*"
   },
   "require-dev": {
     "swaggest/json-schema": "^0.12.11"

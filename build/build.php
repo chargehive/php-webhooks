@@ -107,7 +107,7 @@ foreach($files as $file)
       $src[] = '      $this->' . $property . ' = ' . $setter . ';';
       $src[] = '      return;';
       $src[] = '    }';
-      $src[] = '    ';
+      $src[] = '';
     }
     $src[] = '    parent::_set($property, $value);';
     $src[] = '  }';

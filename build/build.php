@@ -64,12 +64,12 @@ foreach($files as $file)
         {
           $ref = $propertyDefinition->items->{'$ref'};
           $class = filenameToClass(basename($ref, '.json'));
-          $docBlock[] = '   * @var []' . $class;
+          $docBlock[] = '   * @var ' . $class . '[]';
           $setters[$property] = "$class::manyFromSource(\$value)";
         }
         else if(isset($propertyDefinition->items->type))
         {
-          $docBlock[] = '   * @var []' . $propertyDefinition->items->type;
+          $docBlock[] = '   * @var ' . $propertyDefinition->items->type . '[]';
         }
       }
       else

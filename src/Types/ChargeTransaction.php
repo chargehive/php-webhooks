@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ChargeTransaction extends WebhookFoundation
 {
-  //Generated on 2019-08-07
+  //Generated on 2019-08-12
 
   /**
    * Unique ID for the charge that has been transacted
@@ -104,7 +104,7 @@ class ChargeTransaction extends WebhookFoundation
   public $liability;
 
   /**
-   * @var []TransactionDetail
+   * @var TransactionDetail[]
    */
   public $details;
 

@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class TransactionDetail extends WebhookFoundation
 {
-  //Generated on 2019-08-07
+  //Generated on 2019-08-12
 
   /**
    * ID for the actor, such as the connector name e.g. sandbox
@@ -119,19 +119,19 @@ class TransactionDetail extends WebhookFoundation
       $this->requestedAmount = Money::fromSource($value);
       return;
     }
-    
+
     if($property == 'processedAmount')
     {
       $this->processedAmount = Money::fromSource($value);
       return;
     }
-    
+
     if($property == 'threeDsResult')
     {
       $this->threeDsResult = ThreeDSResult::fromSource($value);
       return;
     }
-    
+
     parent::_set($property, $value);
   }
 

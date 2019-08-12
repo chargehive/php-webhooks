@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ChargeCreated extends WebhookFoundation
 {
-  //Generated on 2019-08-07
+  //Generated on 2019-08-12
 
   /**
    * Unique ID for the charge that has been created
@@ -66,7 +66,7 @@ class ChargeCreated extends WebhookFoundation
       $this->amount = Money::fromSource($value);
       return;
     }
-    
+
     parent::_set($property, $value);
   }
 

@@ -8,7 +8,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
  */
 class Money extends WebhookFoundation
 {
-  //Generated on 2019-08-07
+  //Generated on 2019-08-12
 
   /**
    * Amount of money, stored in lowest unit e.g. cents, penies, satoshi

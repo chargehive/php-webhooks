@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class TransactionDetail extends WebhookFoundation
 {
-  //Generated on 2019-08-12
+  //Generated on 2019-08-13
 
   /**
    * ID for the actor, such as the connector name e.g. sandbox
@@ -68,6 +68,11 @@ class TransactionDetail extends WebhookFoundation
   public $processedAmount;
 
   /**
+   * @var Money
+   */
+  public $feeAmount;
+
+  /**
    * True if the transaction was a succeess
    *
    * @var boolean
@@ -123,6 +128,12 @@ class TransactionDetail extends WebhookFoundation
     if($property == 'processedAmount')
     {
       $this->processedAmount = Money::fromSource($value);
+      return;
+    }
+
+    if($property == 'feeAmount')
+    {
+      $this->feeAmount = Money::fromSource($value);
       return;
     }
 

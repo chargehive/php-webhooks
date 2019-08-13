@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class MethodRefreshed extends WebhookFoundation
 {
-  //Generated on 2019-08-12
+  //Generated on 2019-08-13
 
   /**
    * Unique ID for the method that has been refreshed
@@ -13,4 +13,21 @@ class MethodRefreshed extends WebhookFoundation
    * @var string
    */
   public $methodId;
+
+  /**
+   * @var Method
+   */
+  public $method;
+
+  protected function _set($property, $value)
+  {
+    if($property == 'method')
+    {
+      $this->method = Method::fromSource($value);
+      return;
+    }
+
+    parent::_set($property, $value);
+  }
+
 }

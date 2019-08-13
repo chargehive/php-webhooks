@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ThreeDSResult extends WebhookFoundation
 {
-  //Generated on 2019-08-12
+  //Generated on 2019-08-13
 
   /**
    * 3Ds Result - ECI

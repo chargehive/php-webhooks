@@ -5,7 +5,7 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ChargeTransaction extends WebhookFoundation
 {
-  //Generated on 2019-08-12
+  //Generated on 2019-08-13
 
   /**
    * Unique ID for the charge that has been transacted
@@ -107,6 +107,34 @@ class ChargeTransaction extends WebhookFoundation
    * @var TransactionDetail[]
    */
   public $details;
+
+  /**
+   * Number of transactions processed against this charge (including this one)
+   *
+   * @var number
+   */
+  public $transactionNumber;
+
+  /**
+   * Number of attempts to perform this transaction
+   *
+   * @var number
+   */
+  public $attemptNumber;
+
+  /**
+   * Retries within the current attempt
+   *
+   * @var number
+   */
+  public $cascadeLevel;
+
+  /**
+   * Renewal number for the subscription
+   *
+   * @var number
+   */
+  public $renewalNumber;
 
   protected function _set($property, $value)
   {

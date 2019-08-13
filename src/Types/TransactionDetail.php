@@ -5,8 +5,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class TransactionDetail extends WebhookFoundation
 {
-  //Generated on 2019-08-13
-
   /**
    * ID for the actor, such as the connector name e.g. sandbox
    *
@@ -145,5 +143,4 @@ class TransactionDetail extends WebhookFoundation
 
     parent::_set($property, $value);
   }
-
 }

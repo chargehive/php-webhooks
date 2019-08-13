@@ -8,8 +8,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
  */
 class Money extends WebhookFoundation
 {
-  //Generated on 2019-08-13
-
   /**
    * Amount of money, stored in lowest unit e.g. cents, penies, satoshi
    *
@@ -23,4 +21,5 @@ class Money extends WebhookFoundation
    * @var string
    */
   public $currency;
+
 }

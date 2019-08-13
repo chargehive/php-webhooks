@@ -5,8 +5,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class Method extends WebhookFoundation
 {
-  //Generated on 2019-08-13
-
   /**
    * Unique ID for the payment method
    *
@@ -56,4 +54,5 @@ class Method extends WebhookFoundation
    * @var object
    */
   public $info;
+
 }

@@ -6,7 +6,8 @@ if(!file_exists($outputDir))
   mkdir($outputDir);
 }
 $files = glob(__DIR__ . DIRECTORY_SEPARATOR . 'tmp_webhooks/*.json');
-
+$mutations = ['UPDATE' => [], 'CREATE' => []];
+$mutationCount = 0;
 function filenameToClass($file)
 {
   return ucfirst($file);
@@ -32,14 +33,11 @@ foreach($files as $file)
   }
   $src[] = 'class ' . $className . ' extends WebhookFoundation';
   $src[] = '{';
-  $src[] = '  //Generated on ' . date("Y-m-d");
 
   $setters = [];
 
   foreach($json->properties as $property => $propertyDefinition)
   {
-    $src[] = '';
-
     if(isset($propertyDefinition->enum))
     {
       foreach($propertyDefinition->enum as $enum)
@@ -93,11 +91,11 @@ foreach($files as $file)
     }
 
     $src[] = '  public $' . $property . ';';
+    $src[] = '';
   }
 
   if(!empty($setters))
   {
-    $src[] = '';
     $src[] = '  protected function _set($property, $value)';
     $src[] = '  {';
     foreach($setters as $property => $setter)
@@ -111,11 +109,43 @@ foreach($files as $file)
     }
     $src[] = '    parent::_set($property, $value);';
     $src[] = '  }';
-    $src[] = '';
   }
 
   $src[] = '}';
   $src[] = '';
 
-  file_put_contents($outputDir . DIRECTORY_SEPARATOR . $className . '.php', implode(PHP_EOL, $src));
+  $outputFile = $outputDir . DIRECTORY_SEPARATOR . $className . '.php';
+  $data = implode(PHP_EOL, $src);
+
+  $exists = file_exists($outputFile);
+  if(!$exists || file_get_contents($outputFile) != $data)
+  {
+    file_put_contents($outputFile, $data);
+    $mutations[$exists ? 'UPDATE' : 'CREATE'][] = $className;
+    $mutationCount++;
+  }
+}
+
+if($mutationCount > 0)
+{
+  $file = fopen('changelog.md', 'a+');
+  if($file)
+  {
+    fwrite($file, "####Build Process @ " . date("Y-m-d H:i:s") . PHP_EOL);
+    foreach(['CREATE' => 'New Classes', 'UPDATE' => 'Updated Classes'] as $state => $message)
+    {
+
+      if(!empty($mutations[$state]))
+      {
+        fwrite($file, "####$message" . PHP_EOL);
+        foreach($mutations[$state] as $class)
+        {
+          fwrite($file, "- $class" . PHP_EOL);
+        }
+      }
+    }
+
+    fwrite($file, PHP_EOL);
+    fclose($file);
+  }
 }

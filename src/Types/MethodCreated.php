@@ -5,8 +5,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class MethodCreated extends WebhookFoundation
 {
-  //Generated on 2019-08-13
-
   /**
    * Unique ID for the method that has been created
    *
@@ -29,5 +27,4 @@ class MethodCreated extends WebhookFoundation
 
     parent::_set($property, $value);
   }
-
 }

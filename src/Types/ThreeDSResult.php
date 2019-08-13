@@ -5,8 +5,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 
 class ThreeDSResult extends WebhookFoundation
 {
-  //Generated on 2019-08-13
-
   /**
    * 3Ds Result - ECI
    *
@@ -41,4 +39,5 @@ class ThreeDSResult extends WebhookFoundation
    * @var string
    */
   public $result;
+
 }

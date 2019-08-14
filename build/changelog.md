@@ -15,3 +15,10 @@
 - TransactionDetail
 - Webhook
 
+####Build Process @ 2019-08-14 19:36:21
+####Updated Classes
+- MethodArchived
+- MethodCreated
+- MethodModified
+- MethodRefreshed
+

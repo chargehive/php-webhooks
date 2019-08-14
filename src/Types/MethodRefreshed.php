@@ -6,13 +6,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 class MethodRefreshed extends WebhookFoundation
 {
   /**
-   * Unique ID for the method that has been refreshed
-   *
-   * @var string
-   */
-  public $methodId;
-
-  /**
    * @var Method
    */
   public $method;

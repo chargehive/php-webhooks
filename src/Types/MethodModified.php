@@ -6,13 +6,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 class MethodModified extends WebhookFoundation
 {
   /**
-   * Unique ID for the method that has been modified
-   *
-   * @var string
-   */
-  public $methodId;
-
-  /**
    * @var Method
    */
   public $method;

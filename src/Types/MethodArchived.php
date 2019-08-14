@@ -6,13 +6,6 @@ use ChargeHive\Webhooks\WebhookFoundation;
 class MethodArchived extends WebhookFoundation
 {
   /**
-   * Unique ID for the method that has been archived
-   *
-   * @var string
-   */
-  public $methodId;
-
-  /**
    * @var Method
    */
   public $method;

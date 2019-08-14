@@ -6,11 +6,11 @@ use ChargeHive\Webhooks\WebhookFoundation;
 class MethodCreated extends WebhookFoundation
 {
   /**
-   * Unique ID for the method that has been created
+   * Full method ID to use in future calls to chargeHive
    *
    * @var string
    */
-  public $methodId;
+  public $token;
 
   /**
    * @var Method

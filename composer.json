@@ -12,6 +12,7 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "swaggest/json-schema": "^0.12.11"
+    "swaggest/json-schema": "^0.12.11",
+    "packaged/helpers": "2.*"
   }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
@@ -16,6 +16,13 @@ class MethodCreated extends WebhookFoundation
    * @var Method
    */
   public $method;
+
+  /**
+   * References for this transaction
+   *
+   * @var object
+   */
+  public $references;
 
   protected function _set($property, $value)
   {

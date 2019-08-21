@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
@@ -12,15 +12,15 @@ class Webhook extends WebhookFoundation
    */
   public $uuid;
 
-  const TYPE_CHARGECREATED = "chargeCreated";
-  const TYPE_CHARGEMODIFIED = "chargeModified";
-  const TYPE_CHARGETRANSACTION = "chargeTransaction";
-  const TYPE_CHARGECANCEL = "chargeCancel";
-  const TYPE_CHARGECOMPLETE = "chargeComplete";
-  const TYPE_METHODCREATED = "methodCreated";
-  const TYPE_METHODMODIFIED = "methodModified";
-  const TYPE_METHODREFRESHED = "methodRefreshed";
-  const TYPE_METHODARCHIVED = "methodArchived";
+  const TYPE_CHARGE_CREATED = "chargeCreated";
+  const TYPE_CHARGE_MODIFIED = "chargeModified";
+  const TYPE_CHARGE_TRANSACTION = "chargeTransaction";
+  const TYPE_CHARGE_CANCEL = "chargeCancel";
+  const TYPE_CHARGE_COMPLETE = "chargeComplete";
+  const TYPE_METHOD_CREATED = "methodCreated";
+  const TYPE_METHOD_MODIFIED = "methodModified";
+  const TYPE_METHOD_REFRESHED = "methodRefreshed";
+  const TYPE_METHOD_ARCHIVED = "methodArchived";
   /**
    * Notification type
    *

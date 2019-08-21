@@ -1,9 +1,9 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
-class MethodArchived extends WebhookFoundation
+class MethodRefreshed extends WebhookFoundation
 {
   /**
    * @var Method

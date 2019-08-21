@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 

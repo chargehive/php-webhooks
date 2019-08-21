@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
@@ -19,8 +19,8 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $transactionId;
 
-  const PAYMENTMETHODTYPE_CARD = "CARD";
-  const PAYMENTMETHODTYPE_PAYPAL = "PAYPAL";
+  const PAYMENT_METHOD_TYPE_CARD = "CARD";
+  const PAYMENT_METHOD_TYPE_PAYPAL = "PAYPAL";
   public $paymentMethodType;
 
   /**
@@ -37,11 +37,11 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $paymentScheme;
 
-  const TRANSACTIONTYPE_AUTHORIZE = "AUTHORIZE";
-  const TRANSACTIONTYPE_CAPTURE = "CAPTURE";
-  const TRANSACTIONTYPE_REFUND = "REFUND";
-  const TRANSACTIONTYPE_CANCEL = "CANCEL";
-  const TRANSACTIONTYPE_DISPUTE = "DISPUTE";
+  const TRANSACTION_TYPE_AUTHORIZE = "AUTHORIZE";
+  const TRANSACTION_TYPE_CAPTURE = "CAPTURE";
+  const TRANSACTION_TYPE_REFUND = "REFUND";
+  const TRANSACTION_TYPE_CANCEL = "CANCEL";
+  const TRANSACTION_TYPE_DISPUTE = "DISPUTE";
   public $transactionType;
 
   /**
@@ -58,12 +58,12 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $consumerMessage;
 
-  const TRANSACTIONRESULT_SUCCESS = "SUCCESS";
-  const TRANSACTIONRESULT_DECLINED = "DECLINED";
-  const TRANSACTIONRESULT_VERIFY = "VERIFY";
-  const TRANSACTIONRESULT_PENDING = "PENDING";
-  const TRANSACTIONRESULT_PENDING_SUCCESS = "PENDING_SUCCESS";
-  const TRANSACTIONRESULT_RETRY = "RETRY";
+  const TRANSACTION_RESULT_SUCCESS = "SUCCESS";
+  const TRANSACTION_RESULT_DECLINED = "DECLINED";
+  const TRANSACTION_RESULT_VERIFY = "VERIFY";
+  const TRANSACTION_RESULT_PENDING = "PENDING";
+  const TRANSACTION_RESULT_PENDING_SUCCESS = "PENDING_SUCCESS";
+  const TRANSACTION_RESULT_RETRY = "RETRY";
   public $transactionResult;
 
   /**
@@ -76,24 +76,24 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $transactedAmount;
 
-  const CONTRACTTYPE_NONE = "NONE";
-  const CONTRACTTYPE_PAYMENT = "PAYMENT";
-  const CONTRACTTYPE_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
-  const CONTRACTTYPE_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
-  const CONTRACTTYPE_ONECLICK = "ONECLICK";
+  const CONTRACT_TYPE_NONE = "NONE";
+  const CONTRACT_TYPE_PAYMENT = "PAYMENT";
+  const CONTRACT_TYPE_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
+  const CONTRACT_TYPE_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
+  const CONTRACT_TYPE_ONECLICK = "ONECLICK";
   public $contractType;
 
   public $statementDescriptor;
 
-  const FAILURETYPE_NONE = "NONE";
-  const FAILURETYPE_SOFT = "SOFT";
-  const FAILURETYPE_HARD = "HARD";
+  const FAILURE_TYPE_NONE = "NONE";
+  const FAILURE_TYPE_SOFT = "SOFT";
+  const FAILURE_TYPE_HARD = "HARD";
   public $failureType;
 
-  const VERIFICATIONSTATUS_NOT_CHECKED = "NOT_CHECKED";
-  const VERIFICATIONSTATUS_PASSED = "PASSED";
-  const VERIFICATIONSTATUS_FAILED = "FAILED";
-  const VERIFICATIONSTATUS_CONTINUE = "CONTINUE";
+  const VERIFICATION_STATUS_NOT_CHECKED = "NOT_CHECKED";
+  const VERIFICATION_STATUS_PASSED = "PASSED";
+  const VERIFICATION_STATUS_FAILED = "FAILED";
+  const VERIFICATION_STATUS_CONTINUE = "CONTINUE";
   public $verificationStatus;
 
   const LIABILITY_UNKNOWN = "UNKNOWN";
@@ -133,6 +133,13 @@ class ChargeTransaction extends WebhookFoundation
    * @var number
    */
   public $renewalNumber;
+
+  /**
+   * References for this transaction
+   *
+   * @var object
+   */
+  public $references;
 
   protected function _set($property, $value)
   {

@@ -1,13 +1,19 @@
 <?php
 
-$outputDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Types';
+use Packaged\Helpers\Strings;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$outputDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src'
+  . DIRECTORY_SEPARATOR . 'Generated' . DIRECTORY_SEPARATOR . 'V1';
 if(!file_exists($outputDir))
 {
-  mkdir($outputDir);
+  mkdir($outputDir, 0777, true);
 }
 $files = glob(__DIR__ . DIRECTORY_SEPARATOR . 'tmp_webhooks/*.json');
 $mutations = ['UPDATE' => [], 'CREATE' => []];
 $mutationCount = 0;
+
 function filenameToClass($file)
 {
   return ucfirst($file);
@@ -21,7 +27,7 @@ foreach($files as $file)
 
   $src = [];
   $src[] = '<?php';
-  $src[] = 'namespace ChargeHive\\Webhooks\\Types;';
+  $src[] = 'namespace ChargeHive\\Webhooks\\Generated\\V1;';
   $src[] = '';
   $src[] = 'use ChargeHive\\Webhooks\\WebhookFoundation;';
   $src[] = '';
@@ -42,8 +48,9 @@ foreach($files as $file)
     {
       foreach($propertyDefinition->enum as $enum)
       {
-        $src[] = '  const ' . strtoupper($property) . '_' . strtoupper($enum) . ' = '
-          . '"' . addslashes($enum) . '";';
+        $src[] = '  const '
+          . strtoupper(str_replace(' ', '_', Strings::splitOnCamelCase($property . '_' . $enum)))
+          . ' = "' . addslashes($enum) . '";';
       }
     }
 
@@ -128,7 +135,7 @@ foreach($files as $file)
 
 if($mutationCount > 0)
 {
-  $file = fopen('changelog.md', 'a+');
+  $file = fopen('v1.changelog.md', 'a+');
   if($file)
   {
     fwrite($file, "####Build Process @ " . date("Y-m-d H:i:s") . PHP_EOL);

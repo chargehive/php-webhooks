@@ -1,16 +1,16 @@
 <?php
 namespace ChargeHive\Webhooks;
 
-use ChargeHive\Webhooks\Types\ChargeCancel;
-use ChargeHive\Webhooks\Types\ChargeComplete;
-use ChargeHive\Webhooks\Types\ChargeCreated;
-use ChargeHive\Webhooks\Types\ChargeModified;
-use ChargeHive\Webhooks\Types\ChargeTransaction;
-use ChargeHive\Webhooks\Types\MethodArchived;
-use ChargeHive\Webhooks\Types\MethodCreated;
-use ChargeHive\Webhooks\Types\MethodModified;
-use ChargeHive\Webhooks\Types\MethodRefreshed;
-use ChargeHive\Webhooks\Types\Webhook;
+use ChargeHive\Webhooks\Generated\V1\ChargeCancel;
+use ChargeHive\Webhooks\Generated\V1\ChargeComplete;
+use ChargeHive\Webhooks\Generated\V1\ChargeCreated;
+use ChargeHive\Webhooks\Generated\V1\ChargeModified;
+use ChargeHive\Webhooks\Generated\V1\ChargeTransaction;
+use ChargeHive\Webhooks\Generated\V1\MethodArchived;
+use ChargeHive\Webhooks\Generated\V1\MethodCreated;
+use ChargeHive\Webhooks\Generated\V1\MethodModified;
+use ChargeHive\Webhooks\Generated\V1\MethodRefreshed;
+use ChargeHive\Webhooks\Generated\V1\Webhook;
 use InvalidArgumentException;
 use function is_object;
 use function json_decode;
@@ -58,31 +58,31 @@ class WebhookParser
     $hook = Webhook::fromSource($decoded);
     switch($hook->type)
     {
-      case Webhook::TYPE_CHARGECREATED:
+      case Webhook::TYPE_CHARGE_CREATED:
         $hook->data = ChargeCreated::fromSource($hook->data);
         break;
-      case Webhook::TYPE_CHARGEMODIFIED:
+      case Webhook::TYPE_CHARGE_MODIFIED:
         $hook->data = ChargeModified::fromSource($hook->data);
         break;
-      case Webhook::TYPE_CHARGETRANSACTION:
+      case Webhook::TYPE_CHARGE_TRANSACTION:
         $hook->data = ChargeTransaction::fromSource($hook->data);
         break;
-      case Webhook::TYPE_CHARGECANCEL:
+      case Webhook::TYPE_CHARGE_CANCEL:
         $hook->data = ChargeCancel::fromSource($hook->data);
         break;
-      case Webhook::TYPE_CHARGECOMPLETE:
+      case Webhook::TYPE_CHARGE_COMPLETE:
         $hook->data = ChargeComplete::fromSource($hook->data);
         break;
-      case Webhook::TYPE_METHODCREATED:
+      case Webhook::TYPE_METHOD_CREATED:
         $hook->data = MethodCreated::fromSource($hook->data);
         break;
-      case Webhook::TYPE_METHODMODIFIED:
+      case Webhook::TYPE_METHOD_MODIFIED:
         $hook->data = MethodModified::fromSource($hook->data);
         break;
-      case Webhook::TYPE_METHODREFRESHED:
+      case Webhook::TYPE_METHOD_REFRESHED:
         $hook->data = MethodRefreshed::fromSource($hook->data);
         break;
-      case Webhook::TYPE_METHODARCHIVED:
+      case Webhook::TYPE_METHOD_ARCHIVED:
         $hook->data = MethodArchived::fromSource($hook->data);
         break;
     }

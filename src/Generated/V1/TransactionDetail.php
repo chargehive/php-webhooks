@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
@@ -19,26 +19,26 @@ class TransactionDetail extends WebhookFoundation
    */
   public $actorVersion;
 
-  const ACTORTYPE_CONSUMER = "CONSUMER";
-  const ACTORTYPE_MERCHANT = "MERCHANT";
-  const ACTORTYPE_CHARGEHIVE = "CHARGEHIVE";
-  const ACTORTYPE_WALLET = "WALLET";
-  const ACTORTYPE_CONNECTOR = "CONNECTOR";
-  const ACTORTYPE_PAYMENT_PROCESSOR = "PAYMENT_PROCESSOR";
-  const ACTORTYPE_PAYMENT_NETWORK = "PAYMENT_NETWORK";
-  const ACTORTYPE_ACQUIRING_BANK = "ACQUIRING_BANK";
-  const ACTORTYPE_ISSUING_BANK = "ISSUING_BANK";
-  const ACTORTYPE_RECOVERY_AGENT = "RECOVERY_AGENT";
-  const ACTORTYPE_EXCHANGE = "EXCHANGE";
+  const ACTOR_TYPE_CONSUMER = "CONSUMER";
+  const ACTOR_TYPE_MERCHANT = "MERCHANT";
+  const ACTOR_TYPE_CHARGEHIVE = "CHARGEHIVE";
+  const ACTOR_TYPE_WALLET = "WALLET";
+  const ACTOR_TYPE_CONNECTOR = "CONNECTOR";
+  const ACTOR_TYPE_PAYMENT_PROCESSOR = "PAYMENT_PROCESSOR";
+  const ACTOR_TYPE_PAYMENT_NETWORK = "PAYMENT_NETWORK";
+  const ACTOR_TYPE_ACQUIRING_BANK = "ACQUIRING_BANK";
+  const ACTOR_TYPE_ISSUING_BANK = "ISSUING_BANK";
+  const ACTOR_TYPE_RECOVERY_AGENT = "RECOVERY_AGENT";
+  const ACTOR_TYPE_EXCHANGE = "EXCHANGE";
   /**
    * Role of the party in the transaction
    *
    */
   public $actorType;
 
-  const FAILURETYPE_NONE = "NONE";
-  const FAILURETYPE_SOFT = "SOFT";
-  const FAILURETYPE_HARD = "HARD";
+  const FAILURE_TYPE_NONE = "NONE";
+  const FAILURE_TYPE_SOFT = "SOFT";
+  const FAILURE_TYPE_HARD = "HARD";
   public $failureType;
 
   /**

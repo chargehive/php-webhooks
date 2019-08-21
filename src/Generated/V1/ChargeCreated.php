@@ -1,5 +1,5 @@
 <?php
-namespace ChargeHive\Webhooks\Types;
+namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
@@ -12,11 +12,11 @@ class ChargeCreated extends WebhookFoundation
    */
   public $chargeUuid;
 
-  const CHARGEINTENT_METHOD_ADD = "METHOD_ADD";
-  const CHARGEINTENT_METHOD_REFRESH = "METHOD_REFRESH";
-  const CHARGEINTENT_METHOD_VERIFY = "METHOD_VERIFY";
-  const CHARGEINTENT_CAPTURE = "CAPTURE";
-  const CHARGEINTENT_REFUND = "REFUND";
+  const CHARGE_INTENT_METHOD_ADD = "METHOD_ADD";
+  const CHARGE_INTENT_METHOD_REFRESH = "METHOD_REFRESH";
+  const CHARGE_INTENT_METHOD_VERIFY = "METHOD_VERIFY";
+  const CHARGE_INTENT_CAPTURE = "CAPTURE";
+  const CHARGE_INTENT_REFUND = "REFUND";
   /**
    * The intent of this charge
    *

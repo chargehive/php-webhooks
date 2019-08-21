@@ -141,6 +141,13 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $references;
 
+  /**
+   * Transaction time, measured in seconds since the Unix epoch
+   *
+   * @var number
+   */
+  public $transactionTime;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

@@ -13,6 +13,13 @@ class Method extends WebhookFoundation
   public $id;
 
   /**
+   * Version assigned to the payment method
+   *
+   * @var string
+   */
+  public $version;
+
+  /**
    * Name assigned to the method, either provided or calculated
    *
    * @var string

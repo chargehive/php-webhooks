@@ -107,25 +107,9 @@ class ChargeTransaction extends WebhookFoundation
   public $details;
 
   /**
-   * Number of transactions processed against this charge (including this one)
-   *
-   * @var number
+   * @var AttemptDetail
    */
-  public $transactionNumber;
-
-  /**
-   * Number of attempts to perform this transaction
-   *
-   * @var number
-   */
-  public $attemptNumber;
-
-  /**
-   * Retries within the current attempt
-   *
-   * @var number
-   */
-  public $cascadeLevel;
+  public $attemptDetail;
 
   /**
    * Renewal number for the subscription
@@ -165,6 +149,12 @@ class ChargeTransaction extends WebhookFoundation
     if($property == 'details')
     {
       $this->details = TransactionDetail::manyFromSource($value);
+      return;
+    }
+
+    if($property == 'attemptDetail')
+    {
+      $this->attemptDetail = AttemptDetail::fromSource($value);
       return;
     }
 

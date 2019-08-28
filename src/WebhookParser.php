@@ -6,6 +6,7 @@ use ChargeHive\Webhooks\Generated\V1\ChargeComplete;
 use ChargeHive\Webhooks\Generated\V1\ChargeCreated;
 use ChargeHive\Webhooks\Generated\V1\ChargeModified;
 use ChargeHive\Webhooks\Generated\V1\ChargeTransaction;
+use ChargeHive\Webhooks\Generated\V1\FraudScan;
 use ChargeHive\Webhooks\Generated\V1\MethodArchived;
 use ChargeHive\Webhooks\Generated\V1\MethodCreated;
 use ChargeHive\Webhooks\Generated\V1\MethodModified;
@@ -84,6 +85,9 @@ class WebhookParser
         break;
       case Webhook::TYPE_METHOD_ARCHIVED:
         $hook->data = MethodArchived::fromSource($hook->data);
+        break;
+      case Webhook::TYPE_FRAUD_SCAN:
+        $hook->data = FraudScan::fromSource($hook->data);
         break;
     }
 

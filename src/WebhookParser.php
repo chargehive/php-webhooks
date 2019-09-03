@@ -40,12 +40,13 @@ class WebhookParser
     $verification = isset($headers['x-chargehive-verification']) ? $headers['x-chargehive-verification'] : '';
 
     //Verify the checksum + verification key matches the verification has
-    return sha1($checksum . $this->_verificationKey) == $verification;
+    return sha1($checksum . $this->_verificationKey) === $verification;
   }
 
-  public function verifyWebhook(Webhook $webhook): bool
+  public function verifyWebhook(array $headers, Webhook $webhook): bool
   {
-    return true;
+    $checksum = isset($headers['x-chargehive-checksum']) ? $headers['x-chargehive-checksum'] : '';
+    return sha1(json_encode($webhook->data)) === $checksum;
   }
 
   public function parse(string $rawPayload): Webhook

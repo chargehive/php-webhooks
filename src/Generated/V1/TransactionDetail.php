@@ -120,7 +120,7 @@ class TransactionDetail extends WebhookFoundation
    *
    * @var string
    */
-  public $startTime;
+  public $transactionTime;
 
   protected function _set($property, $value)
   {

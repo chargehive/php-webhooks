@@ -115,6 +115,13 @@ class TransactionDetail extends WebhookFoundation
    */
   public $threeDsResult;
 
+  /**
+   * Start time of this actor process
+   *
+   * @var string
+   */
+  public $startTime;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

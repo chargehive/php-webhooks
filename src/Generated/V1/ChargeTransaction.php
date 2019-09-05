@@ -132,6 +132,13 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $transactionTime;
 
+  /**
+   * Transaction ID for the source transaction e.g. Original Transaction for a refund, or captureAuth
+   *
+   * @var string
+   */
+  public $sourceTransactionId;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

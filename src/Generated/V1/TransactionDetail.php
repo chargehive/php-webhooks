@@ -122,13 +122,6 @@ class TransactionDetail extends WebhookFoundation
    */
   public $transactionTime;
 
-  /**
-   * connector library ID used to process this transaction
-   *
-   * @var string
-   */
-  public $connectorLibrary;
-
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

@@ -146,6 +146,27 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $connectorID;
 
+  /**
+   * connector library ID used to process this transaction
+   *
+   * @var string
+   */
+  public $connectorLibrary;
+
+  /**
+   * Address Verification result
+   *
+   * @var string
+   */
+  public $addressVerificationResult;
+
+  /**
+   * Card Verification result
+   *
+   * @var string
+   */
+  public $cvvVerificationResult;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

@@ -144,7 +144,7 @@ class ChargeTransaction extends WebhookFoundation
    *
    * @var string
    */
-  public $connectorID;
+  public $connectorId;
 
   /**
    * connector library ID used to process this transaction

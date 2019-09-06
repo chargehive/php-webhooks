@@ -139,6 +139,13 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $sourceTransactionId;
 
+  /**
+   * Your ID for the connector used
+   *
+   * @var string
+   */
+  public $connectorID;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

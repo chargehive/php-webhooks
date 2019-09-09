@@ -90,6 +90,11 @@ class ChargeTransaction extends WebhookFoundation
   const FAILURE_TYPE_HARD = "HARD";
   public $failureType;
 
+  const VERIFICATION_TYPE_INVALID = "INVALID";
+  const VERIFICATION_TYPE_IDENTIFY = "IDENTIFY";
+  const VERIFICATION_TYPE_CHALLENGE = "CHALLENGE";
+  public $verificationType;
+
   const VERIFICATION_STATUS_NOT_CHECKED = "NOT_CHECKED";
   const VERIFICATION_STATUS_PASSED = "PASSED";
   const VERIFICATION_STATUS_FAILED = "FAILED";

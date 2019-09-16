@@ -172,6 +172,13 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $cvvVerificationResult;
 
+  /**
+   * Unique reference for this charge, as defined by the merchant
+   *
+   * @var string
+   */
+  public $merchantReference;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

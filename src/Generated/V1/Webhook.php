@@ -22,6 +22,7 @@ class Webhook extends WebhookFoundation
   const TYPE_METHOD_REFRESHED = "methodRefreshed";
   const TYPE_METHOD_ARCHIVED = "methodArchived";
   const TYPE_FRAUD_SCAN = "fraudScan";
+  const TYPE_VERIFY = "verify";
   /**
    * Notification type
    *

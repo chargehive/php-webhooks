@@ -39,6 +39,8 @@ class TransactionDetail extends WebhookFoundation
   const FAILURE_TYPE_NONE = "NONE";
   const FAILURE_TYPE_SOFT = "SOFT";
   const FAILURE_TYPE_HARD = "HARD";
+  const FAILURE_TYPE_RETRY = "RETRY";
+  const FAILURE_TYPE_INTERNAL = "INTERNAL";
   public $failureType;
 
   /**

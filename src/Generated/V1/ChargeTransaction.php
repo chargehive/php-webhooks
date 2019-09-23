@@ -42,6 +42,8 @@ class ChargeTransaction extends WebhookFoundation
   const TRANSACTION_TYPE_REFUND = "REFUND";
   const TRANSACTION_TYPE_CANCEL = "CANCEL";
   const TRANSACTION_TYPE_DISPUTE = "DISPUTE";
+  const TRANSACTION_TYPE_VERIFY = "VERIFY";
+  const TRANSACTION_TYPE_INTERNAL = "INTERNAL";
   public $transactionType;
 
   /**
@@ -88,6 +90,8 @@ class ChargeTransaction extends WebhookFoundation
   const FAILURE_TYPE_NONE = "NONE";
   const FAILURE_TYPE_SOFT = "SOFT";
   const FAILURE_TYPE_HARD = "HARD";
+  const FAILURE_TYPE_RETRY = "RETRY";
+  const FAILURE_TYPE_INTERNAL = "INTERNAL";
   public $failureType;
 
   const VERIFICATION_TYPE_INVALID = "INVALID";

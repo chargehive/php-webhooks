@@ -11,6 +11,7 @@ use ChargeHive\Webhooks\Generated\V1\MethodArchived;
 use ChargeHive\Webhooks\Generated\V1\MethodCreated;
 use ChargeHive\Webhooks\Generated\V1\MethodModified;
 use ChargeHive\Webhooks\Generated\V1\MethodRefreshed;
+use ChargeHive\Webhooks\Generated\V1\Verify;
 use ChargeHive\Webhooks\Generated\V1\Webhook;
 use InvalidArgumentException;
 use function is_object;
@@ -85,6 +86,9 @@ class WebhookParser
         break;
       case Webhook::TYPE_FRAUD_SCAN:
         $hook->data = FraudScan::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_VERIFY:
+        $hook->data = Verify::fromSource($this->_decodeJson($hook->data));
         break;
     }
 

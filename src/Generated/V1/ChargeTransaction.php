@@ -46,6 +46,11 @@ class ChargeTransaction extends WebhookFoundation
   const TRANSACTION_TYPE_INTERNAL = "INTERNAL";
   public $transactionType;
 
+  const TRANSACTION_SUB_TYPE_IDENTIFY = "IDENTIFY";
+  const TRANSACTION_SUB_TYPE_CHALLENGE = "CHALLENGE";
+  const TRANSACTION_SUB_TYPE_CAPTURE_AUTH = "CAPTURE_AUTH";
+  public $transactionSubType;
+
   /**
    * ChargeHive Response Code
    *

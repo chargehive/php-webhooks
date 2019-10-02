@@ -30,6 +30,7 @@ class TransactionDetail extends WebhookFoundation
   const ACTOR_TYPE_ISSUING_BANK = "ISSUING_BANK";
   const ACTOR_TYPE_RECOVERY_AGENT = "RECOVERY_AGENT";
   const ACTOR_TYPE_EXCHANGE = "EXCHANGE";
+  const ACTOR_TYPE_POLICY = "POLICY";
   /**
    * Role of the party in the transaction
    *

@@ -21,6 +21,8 @@ class ChargeTransaction extends WebhookFoundation
 
   const PAYMENT_METHOD_TYPE_CARD = "CARD";
   const PAYMENT_METHOD_TYPE_PAYPAL = "PAYPAL";
+  const PAYMENT_METHOD_TYPE_DIRECTDEBIT = "DIRECTDEBIT";
+  const PAYMENT_METHOD_TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
   public $paymentMethodType;
 
   /**
@@ -43,6 +45,7 @@ class ChargeTransaction extends WebhookFoundation
   const TRANSACTION_TYPE_CANCEL = "CANCEL";
   const TRANSACTION_TYPE_DISPUTE = "DISPUTE";
   const TRANSACTION_TYPE_VERIFY = "VERIFY";
+  const TRANSACTION_TYPE_EXPIRED = "EXPIRED";
   const TRANSACTION_TYPE_INTERNAL = "INTERNAL";
   public $transactionType;
 
@@ -71,6 +74,7 @@ class ChargeTransaction extends WebhookFoundation
   const TRANSACTION_RESULT_PENDING = "PENDING";
   const TRANSACTION_RESULT_PENDING_SUCCESS = "PENDING_SUCCESS";
   const TRANSACTION_RESULT_RETRY = "RETRY";
+  const TRANSACTION_RESULT_EXPIRED = "EXPIRED";
   public $transactionResult;
 
   /**
@@ -188,6 +192,11 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $merchantReference;
 
+  /**
+   * @var ResponseDetail
+   */
+  public $responseDetail;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')
@@ -211,6 +220,12 @@ class ChargeTransaction extends WebhookFoundation
     if($property == 'attemptDetail')
     {
       $this->attemptDetail = AttemptDetail::fromSource($value);
+      return;
+    }
+
+    if($property == 'responseDetail')
+    {
+      $this->responseDetail = ResponseDetail::fromSource($value);
       return;
     }
 

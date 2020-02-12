@@ -9,8 +9,10 @@ use ChargeHive\Webhooks\Generated\V1\ChargeTransaction;
 use ChargeHive\Webhooks\Generated\V1\FraudScan;
 use ChargeHive\Webhooks\Generated\V1\MethodArchived;
 use ChargeHive\Webhooks\Generated\V1\MethodCreated;
+use ChargeHive\Webhooks\Generated\V1\MethodLocked;
 use ChargeHive\Webhooks\Generated\V1\MethodModified;
 use ChargeHive\Webhooks\Generated\V1\MethodRefreshed;
+use ChargeHive\Webhooks\Generated\V1\MethodUnlocked;
 use ChargeHive\Webhooks\Generated\V1\Verify;
 use ChargeHive\Webhooks\Generated\V1\Webhook;
 use InvalidArgumentException;
@@ -83,6 +85,12 @@ class WebhookParser
         break;
       case Webhook::TYPE_METHOD_ARCHIVED:
         $hook->data = MethodArchived::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_METHOD_LOCKED:
+        $hook->data = MethodLocked::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_METHOD_UNLOCKED:
+        $hook->data = MethodUnlocked::fromSource($this->_decodeJson($hook->data));
         break;
       case Webhook::TYPE_FRAUD_SCAN:
         $hook->data = FraudScan::fromSource($this->_decodeJson($hook->data));

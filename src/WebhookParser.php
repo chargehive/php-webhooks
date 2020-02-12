@@ -84,6 +84,12 @@ class WebhookParser
       case Webhook::TYPE_METHOD_ARCHIVED:
         $hook->data = MethodArchived::fromSource($this->_decodeJson($hook->data));
         break;
+      case Webhook::TYPE_METHOD_LOCKED:
+        $hook->data = MethodLocked::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_METHOD_UNLOCKED:
+        $hook->data = MethodUnlocked::fromSource($this->_decodeJson($hook->data));
+        break;
       case Webhook::TYPE_FRAUD_SCAN:
         $hook->data = FraudScan::fromSource($this->_decodeJson($hook->data));
         break;

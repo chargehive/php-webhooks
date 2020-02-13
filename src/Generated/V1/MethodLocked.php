@@ -19,4 +19,18 @@ class MethodLocked extends WebhookFoundation
    */
   public $lockTimestamp;
 
+  /**
+   * The ID of the policy
+   *
+   * @var string
+   */
+  public $policyID;
+
+  /**
+   * The reason the payment method was locked
+   *
+   * @var string
+   */
+  public $reason;
+
 }

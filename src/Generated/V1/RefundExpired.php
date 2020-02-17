@@ -19,4 +19,18 @@ class RefundExpired extends WebhookFoundation
    */
   public $sourceTransactionID;
 
+  /**
+   * Refund amount in lowest denomination of currency
+   *
+   * @var number
+   */
+  public $requestedAmountUnits;
+
+  /**
+   * Refund amount currency
+   *
+   * @var string
+   */
+  public $requestedAmountCurrency;
+
 }

@@ -17,6 +17,7 @@ class Webhook extends WebhookFoundation
   const TYPE_CHARGE_TRANSACTION = "chargeTransaction";
   const TYPE_CHARGE_CANCEL = "chargeCancel";
   const TYPE_CHARGE_EXPIRED = "chargeExpired";
+  const TYPE_REFUND_EXPIRED = "refundExpired";
   const TYPE_METHOD_CREATED = "methodCreated";
   const TYPE_METHOD_MODIFIED = "methodModified";
   const TYPE_METHOD_REFRESHED = "methodRefreshed";

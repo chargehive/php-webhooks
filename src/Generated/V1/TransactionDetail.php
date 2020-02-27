@@ -125,6 +125,11 @@ class TransactionDetail extends WebhookFoundation
    */
   public $transactionTime;
 
+  /**
+   * @var ResponseDetail
+   */
+  public $responseDetail;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')
@@ -148,6 +153,12 @@ class TransactionDetail extends WebhookFoundation
     if($property == 'threeDsResult')
     {
       $this->threeDsResult = ThreeDSResult::fromSource($value);
+      return;
+    }
+
+    if($property == 'responseDetail')
+    {
+      $this->responseDetail = ResponseDetail::fromSource($value);
       return;
     }
 

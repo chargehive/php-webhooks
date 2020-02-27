@@ -12,4 +12,11 @@ class MethodUnlocked extends WebhookFoundation
    */
   public $methodID;
 
+  /**
+   * The reason the payment method was unlocked
+   *
+   * @var string
+   */
+  public $reason;
+
 }

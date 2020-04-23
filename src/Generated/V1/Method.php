@@ -26,6 +26,28 @@ class Method extends WebhookFoundation
    */
   public $name;
 
+  const TYPE_CARD = "CARD";
+  const TYPE_DIGITALWALLET = "DIGITALWALLET";
+  const TYPE_DIRECTDEBIT = "DIRECTDEBIT";
+  const TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
+  /**
+   * Payment method type
+   *
+   */
+  public $type;
+
+  const PROVIDER_FORM_USER = "FORM_USER";
+  const PROVIDER_FORM_AGENT = "FORM_AGENT";
+  const PROVIDER_PAYPAL = "PAYPAL";
+  const PROVIDER_APPLEPAY = "APPLEPAY";
+  const PROVIDER_GOOGLEPAY = "GOOGLEPAY";
+  const PROVIDER_AMAZONPAY = "AMAZONPAY";
+  /**
+   * Payment method type
+   *
+   */
+  public $provider;
+
   /**
    * Payment Scheme for the method, e.g. card_visa, paypal_business
    *
@@ -46,14 +68,6 @@ class Method extends WebhookFoundation
    * @var number
    */
   public $expiry;
-
-  const TYPE_CARD = "CARD";
-  const TYPE_PAYPAL = "PAYPAL";
-  /**
-   * Payment method type
-   *
-   */
-  public $type;
 
   /**
    * Additional information about this payment method

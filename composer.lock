@@ -4,24 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bc09c34b9e20925ba3aac6c2a1e86af",
+    "content-hash": "c629d8a2e6ee652e9c587ac4c4e6ab63",
     "packages": [],
     "packages-dev": [
         {
             "name": "packaged/helpers",
-            "version": "2.4.0",
+            "version": "2.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/packaged/helpers.git",
-                "reference": "6ed466d75490c4e6d6f418cd4e234675128164d8"
+                "reference": "ff88bc15cccb538d540ac099de31c1d7215bb052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/packaged/helpers/zipball/6ed466d75490c4e6d6f418cd4e234675128164d8",
-                "reference": "6ed466d75490c4e6d6f418cd4e234675128164d8",
+                "url": "https://api.github.com/repos/packaged/helpers/zipball/ff88bc15cccb538d540ac099de31c1d7215bb052",
+                "reference": "ff88bc15cccb538d540ac099de31c1d7215bb052",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -45,7 +46,7 @@
                 }
             ],
             "description": "Generic PHP Helper Classes",
-            "time": "2019-08-20T10:48:18+00:00"
+            "time": "2020-04-21T19:05:53+00:00"
         },
         {
             "name": "phplang/scope-exit",
@@ -93,24 +94,22 @@
         },
         {
             "name": "swaggest/json-diff",
-            "version": "v3.7.0",
+            "version": "v3.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swaggest/json-diff.git",
-                "reference": "53c412ad8e3fc1293d4e6fdf06f7839698ad897d"
+                "reference": "fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swaggest/json-diff/zipball/53c412ad8e3fc1293d4e6fdf06f7839698ad897d",
-                "reference": "53c412ad8e3fc1293d4e6fdf06f7839698ad897d",
+                "url": "https://api.github.com/repos/swaggest/json-diff/zipball/fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716",
+                "reference": "fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "^0.4.0",
-                "phpunit/php-code-coverage": "2.2.4",
                 "phpunit/phpunit": "^4.8.23"
             },
             "type": "library",
@@ -130,20 +129,20 @@
                 }
             ],
             "description": "JSON diff/rearrange/patch/pointer library for PHP",
-            "time": "2019-04-25T04:15:41+00:00"
+            "time": "2020-01-26T20:52:06+00:00"
         },
         {
             "name": "swaggest/json-schema",
-            "version": "v0.12.17",
+            "version": "v0.12.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swaggest/php-json-schema.git",
-                "reference": "b324c2b7fd0178c7453483d6d6efe440d99d1925"
+                "reference": "7564d4a5fc8c068479698a30e5a7c589ea32a9c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swaggest/php-json-schema/zipball/b324c2b7fd0178c7453483d6d6efe440d99d1925",
-                "reference": "b324c2b7fd0178c7453483d6d6efe440d99d1925",
+                "url": "https://api.github.com/repos/swaggest/php-json-schema/zipball/7564d4a5fc8c068479698a30e5a7c589ea32a9c6",
+                "reference": "7564d4a5fc8c068479698a30e5a7c589ea32a9c6",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +173,7 @@
                 }
             ],
             "description": "High definition PHP structures with JSON-schema based validation",
-            "time": "2019-08-29T13:49:10+00:00"
+            "time": "2020-03-19T08:41:40+00:00"
         }
     ],
     "aliases": [],
@@ -183,7 +182,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+        "php": ">=7.3",
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

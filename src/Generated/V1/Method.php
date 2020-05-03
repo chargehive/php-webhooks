@@ -36,8 +36,7 @@ class Method extends WebhookFoundation
    */
   public $type;
 
-  const PROVIDER_FORM_USER = "FORM_USER";
-  const PROVIDER_FORM_AGENT = "FORM_AGENT";
+  const PROVIDER_FORM = "FORM";
   const PROVIDER_PAYPAL = "PAYPAL";
   const PROVIDER_APPLEPAY = "APPLEPAY";
   const PROVIDER_GOOGLEPAY = "GOOGLEPAY";
@@ -47,6 +46,11 @@ class Method extends WebhookFoundation
    *
    */
   public $provider;
+
+  const INPUT_TYPE_PHYSICAL = "PHYSICAL";
+  const INPUT_TYPE_VIRTUAL = "VIRTUAL";
+  const INPUT_TYPE_PROXY = "PROXY";
+  public $inputType;
 
   /**
    * Payment Scheme for the method, e.g. card_visa, paypal_business

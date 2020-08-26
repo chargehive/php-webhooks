@@ -80,4 +80,14 @@ class Method extends WebhookFoundation
    */
   public $info;
 
+  const STATUS_ACTIVE = "ACTIVE";
+  const STATUS_PENDING = "PENDING";
+  const STATUS_CANCELLED = "CANCELLED";
+  const STATUS_SUSPENDED = "SUSPENDED";
+  /**
+   * Status of payment method
+   *
+   */
+  public $status;
+
 }

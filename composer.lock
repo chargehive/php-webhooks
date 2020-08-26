@@ -9,16 +9,16 @@
     "packages-dev": [
         {
             "name": "packaged/helpers",
-            "version": "2.10.2",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/packaged/helpers.git",
-                "reference": "ff88bc15cccb538d540ac099de31c1d7215bb052"
+                "reference": "7db8fbc1b7b439315bd4846e35463ed3b69f11d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/packaged/helpers/zipball/ff88bc15cccb538d540ac099de31c1d7215bb052",
-                "reference": "ff88bc15cccb538d540ac099de31c1d7215bb052",
+                "url": "https://api.github.com/repos/packaged/helpers/zipball/7db8fbc1b7b439315bd4846e35463ed3b69f11d9",
+                "reference": "7db8fbc1b7b439315bd4846e35463ed3b69f11d9",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 }
             ],
             "description": "Generic PHP Helper Classes",
-            "time": "2020-04-21T19:05:53+00:00"
+            "time": "2020-08-11T15:04:23+00:00"
         },
         {
             "name": "phplang/scope-exit",
@@ -78,9 +78,9 @@
             "authors": [
                 {
                     "name": "Sara Golemon",
-                    "role": "Developer",
                     "email": "pollita@php.net",
-                    "homepage": "https://twitter.com/SaraMG"
+                    "homepage": "https://twitter.com/SaraMG",
+                    "role": "Developer"
                 }
             ],
             "description": "Emulation of SCOPE_EXIT construct from C++",
@@ -94,16 +94,16 @@
         },
         {
             "name": "swaggest/json-diff",
-            "version": "v3.7.4",
+            "version": "v3.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swaggest/json-diff.git",
-                "reference": "fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716"
+                "reference": "e452a9c6444905a486280c7d56503a6468303f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swaggest/json-diff/zipball/fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716",
-                "reference": "fccbbd6ee31b5949ab52e9c53f7a1e1b06d84716",
+                "url": "https://api.github.com/repos/swaggest/json-diff/zipball/e452a9c6444905a486280c7d56503a6468303f69",
+                "reference": "e452a9c6444905a486280c7d56503a6468303f69",
                 "shasum": ""
             },
             "require": {
@@ -129,7 +129,7 @@
                 }
             ],
             "description": "JSON diff/rearrange/patch/pointer library for PHP",
-            "time": "2020-01-26T20:52:06+00:00"
+            "time": "2020-05-26T21:53:21+00:00"
         },
         {
             "name": "swaggest/json-schema",

@@ -13,11 +13,11 @@ class RefundExpired extends WebhookFoundation
   public $chargeUuid;
 
   /**
-   * Unique parent ID for the refund that has expired
+   * Unique ID for the refund transaction that has expired
    *
    * @var string
    */
-  public $sourceTransactionID;
+  public $transactionID;
 
   /**
    * Refund amount in lowest denomination of currency

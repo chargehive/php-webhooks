@@ -209,6 +209,20 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $responseDetail;
 
+  /**
+   * This is the authorization code returned by the issuing bank.
+   *
+   * @var string
+   */
+  public $authCode;
+
+  /**
+   * Acquirer Reference Number
+   *
+   * @var string
+   */
+  public $arn;
+
   protected function _set($property, $value)
   {
     if($property == 'requestedAmount')

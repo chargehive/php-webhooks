@@ -10,6 +10,13 @@ class MethodRefreshed extends WebhookFoundation
    */
   public $method;
 
+  /**
+   * Additional response information
+   *
+   * @var object
+   */
+  public $meta;
+
   protected function _set($property, $value)
   {
     if($property == 'method')

@@ -15,3 +15,5 @@ fi
 
 php ./v1.php
 rm -rf ./tmp_webhooks
+
+git add ../src/Generated/*

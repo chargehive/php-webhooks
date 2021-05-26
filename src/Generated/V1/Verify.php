@@ -29,7 +29,7 @@ class Verify extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'response')
+    if($property === 'response')
     {
       $this->response = ResponseDetail::fromSource($value);
       return;

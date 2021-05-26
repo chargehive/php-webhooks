@@ -19,7 +19,7 @@ class MethodRefreshed extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'method')
+    if($property === 'method')
     {
       $this->method = Method::fromSource($value);
       return;

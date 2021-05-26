@@ -12,20 +12,20 @@ class Webhook extends WebhookFoundation
    */
   public $uuid;
 
-  const TYPE_CHARGE_CREATED = "chargeCreated";
-  const TYPE_CHARGE_MODIFIED = "chargeModified";
-  const TYPE_CHARGE_TRANSACTION = "chargeTransaction";
-  const TYPE_CHARGE_CANCEL = "chargeCancel";
-  const TYPE_CHARGE_EXPIRED = "chargeExpired";
-  const TYPE_REFUND_EXPIRED = "refundExpired";
-  const TYPE_METHOD_CREATED = "methodCreated";
-  const TYPE_METHOD_MODIFIED = "methodModified";
-  const TYPE_METHOD_REFRESHED = "methodRefreshed";
-  const TYPE_METHOD_ARCHIVED = "methodArchived";
-  const TYPE_METHOD_LOCKED = "methodLocked";
-  const TYPE_METHOD_UNLOCKED = "methodUnlocked";
-  const TYPE_FRAUD_SCAN = "fraudScan";
-  const TYPE_VERIFY = "verify";
+  public const TYPE_CHARGE_CREATED = "chargeCreated";
+  public const TYPE_CHARGE_MODIFIED = "chargeModified";
+  public const TYPE_CHARGE_TRANSACTION = "chargeTransaction";
+  public const TYPE_CHARGE_CANCEL = "chargeCancel";
+  public const TYPE_CHARGE_EXPIRED = "chargeExpired";
+  public const TYPE_REFUND_EXPIRED = "refundExpired";
+  public const TYPE_METHOD_CREATED = "methodCreated";
+  public const TYPE_METHOD_MODIFIED = "methodModified";
+  public const TYPE_METHOD_REFRESHED = "methodRefreshed";
+  public const TYPE_METHOD_ARCHIVED = "methodArchived";
+  public const TYPE_METHOD_LOCKED = "methodLocked";
+  public const TYPE_METHOD_UNLOCKED = "methodUnlocked";
+  public const TYPE_FRAUD_SCAN = "fraudScan";
+  public const TYPE_VERIFY = "verify";
   /**
    * Notification type
    *

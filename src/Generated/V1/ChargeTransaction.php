@@ -19,22 +19,22 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $transactionId;
 
-  const PAYMENT_METHOD_TYPE_CARD = "CARD";
-  const PAYMENT_METHOD_TYPE_DIGITALWALLET = "DIGITALWALLET";
-  const PAYMENT_METHOD_TYPE_DIRECTDEBIT = "DIRECTDEBIT";
-  const PAYMENT_METHOD_TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
+  public const PAYMENT_METHOD_TYPE_CARD = "CARD";
+  public const PAYMENT_METHOD_TYPE_DIGITALWALLET = "DIGITALWALLET";
+  public const PAYMENT_METHOD_TYPE_DIRECTDEBIT = "DIRECTDEBIT";
+  public const PAYMENT_METHOD_TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
   public $paymentMethodType;
 
-  const PAYMENT_METHOD_PROVIDER_FORM = "FORM";
-  const PAYMENT_METHOD_PROVIDER_PAYPAL = "PAYPAL";
-  const PAYMENT_METHOD_PROVIDER_APPLEPAY = "APPLEPAY";
-  const PAYMENT_METHOD_PROVIDER_GOOGLEPAY = "GOOGLEPAY";
-  const PAYMENT_METHOD_PROVIDER_AMAZONPAY = "AMAZONPAY";
+  public const PAYMENT_METHOD_PROVIDER_FORM = "FORM";
+  public const PAYMENT_METHOD_PROVIDER_PAYPAL = "PAYPAL";
+  public const PAYMENT_METHOD_PROVIDER_APPLEPAY = "APPLEPAY";
+  public const PAYMENT_METHOD_PROVIDER_GOOGLEPAY = "GOOGLEPAY";
+  public const PAYMENT_METHOD_PROVIDER_AMAZONPAY = "AMAZONPAY";
   public $paymentMethodProvider;
 
-  const PAYMENT_METHOD_INPUT_TYPE_PHYSICAL = "PHYSICAL";
-  const PAYMENT_METHOD_INPUT_TYPE_VIRTUAL = "VIRTUAL";
-  const PAYMENT_METHOD_INPUT_TYPE_PROXY = "PROXY";
+  public const PAYMENT_METHOD_INPUT_TYPE_PHYSICAL = "PHYSICAL";
+  public const PAYMENT_METHOD_INPUT_TYPE_VIRTUAL = "VIRTUAL";
+  public const PAYMENT_METHOD_INPUT_TYPE_PROXY = "PROXY";
   public $paymentMethodInputType;
 
   /**
@@ -51,19 +51,19 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $paymentScheme;
 
-  const TRANSACTION_TYPE_AUTHORIZE = "AUTHORIZE";
-  const TRANSACTION_TYPE_CAPTURE = "CAPTURE";
-  const TRANSACTION_TYPE_REFUND = "REFUND";
-  const TRANSACTION_TYPE_CANCEL = "CANCEL";
-  const TRANSACTION_TYPE_DISPUTE = "DISPUTE";
-  const TRANSACTION_TYPE_VERIFY = "VERIFY";
-  const TRANSACTION_TYPE_EXPIRED = "EXPIRED";
-  const TRANSACTION_TYPE_INTERNAL = "INTERNAL";
+  public const TRANSACTION_TYPE_AUTHORIZE = "AUTHORIZE";
+  public const TRANSACTION_TYPE_CAPTURE = "CAPTURE";
+  public const TRANSACTION_TYPE_REFUND = "REFUND";
+  public const TRANSACTION_TYPE_CANCEL = "CANCEL";
+  public const TRANSACTION_TYPE_DISPUTE = "DISPUTE";
+  public const TRANSACTION_TYPE_VERIFY = "VERIFY";
+  public const TRANSACTION_TYPE_EXPIRED = "EXPIRED";
+  public const TRANSACTION_TYPE_INTERNAL = "INTERNAL";
   public $transactionType;
 
-  const TRANSACTION_SUB_TYPE_IDENTIFY = "IDENTIFY";
-  const TRANSACTION_SUB_TYPE_CHALLENGE = "CHALLENGE";
-  const TRANSACTION_SUB_TYPE_CAPTURE_AUTH = "CAPTURE_AUTH";
+  public const TRANSACTION_SUB_TYPE_IDENTIFY = "IDENTIFY";
+  public const TRANSACTION_SUB_TYPE_CHALLENGE = "CHALLENGE";
+  public const TRANSACTION_SUB_TYPE_CAPTURE_AUTH = "CAPTURE_AUTH";
   public $transactionSubType;
 
   /**
@@ -80,13 +80,13 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $consumerMessage;
 
-  const TRANSACTION_RESULT_SUCCESS = "SUCCESS";
-  const TRANSACTION_RESULT_DECLINED = "DECLINED";
-  const TRANSACTION_RESULT_VERIFY = "VERIFY";
-  const TRANSACTION_RESULT_PENDING = "PENDING";
-  const TRANSACTION_RESULT_PENDING_SUCCESS = "PENDING_SUCCESS";
-  const TRANSACTION_RESULT_RETRY = "RETRY";
-  const TRANSACTION_RESULT_EXPIRED = "EXPIRED";
+  public const TRANSACTION_RESULT_SUCCESS = "SUCCESS";
+  public const TRANSACTION_RESULT_DECLINED = "DECLINED";
+  public const TRANSACTION_RESULT_VERIFY = "VERIFY";
+  public const TRANSACTION_RESULT_PENDING = "PENDING";
+  public const TRANSACTION_RESULT_PENDING_SUCCESS = "PENDING_SUCCESS";
+  public const TRANSACTION_RESULT_RETRY = "RETRY";
+  public const TRANSACTION_RESULT_EXPIRED = "EXPIRED";
   public $transactionResult;
 
   /**
@@ -99,36 +99,36 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $transactedAmount;
 
-  const CONTRACT_TYPE_NONE = "NONE";
-  const CONTRACT_TYPE_PAYMENT = "PAYMENT";
-  const CONTRACT_TYPE_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
-  const CONTRACT_TYPE_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
-  const CONTRACT_TYPE_ONECLICK = "ONECLICK";
+  public const CONTRACT_TYPE_NONE = "NONE";
+  public const CONTRACT_TYPE_PAYMENT = "PAYMENT";
+  public const CONTRACT_TYPE_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
+  public const CONTRACT_TYPE_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
+  public const CONTRACT_TYPE_ONECLICK = "ONECLICK";
   public $contractType;
 
   public $statementDescriptor;
 
-  const FAILURE_TYPE_NONE = "NONE";
-  const FAILURE_TYPE_SOFT = "SOFT";
-  const FAILURE_TYPE_HARD = "HARD";
-  const FAILURE_TYPE_RETRY = "RETRY";
-  const FAILURE_TYPE_INTERNAL = "INTERNAL";
+  public const FAILURE_TYPE_NONE = "NONE";
+  public const FAILURE_TYPE_SOFT = "SOFT";
+  public const FAILURE_TYPE_HARD = "HARD";
+  public const FAILURE_TYPE_RETRY = "RETRY";
+  public const FAILURE_TYPE_INTERNAL = "INTERNAL";
   public $failureType;
 
-  const VERIFICATION_TYPE_INVALID = "INVALID";
-  const VERIFICATION_TYPE_IDENTIFY = "IDENTIFY";
-  const VERIFICATION_TYPE_CHALLENGE = "CHALLENGE";
+  public const VERIFICATION_TYPE_INVALID = "INVALID";
+  public const VERIFICATION_TYPE_IDENTIFY = "IDENTIFY";
+  public const VERIFICATION_TYPE_CHALLENGE = "CHALLENGE";
   public $verificationType;
 
-  const VERIFICATION_STATUS_NOT_CHECKED = "NOT_CHECKED";
-  const VERIFICATION_STATUS_PASSED = "PASSED";
-  const VERIFICATION_STATUS_FAILED = "FAILED";
-  const VERIFICATION_STATUS_CONTINUE = "CONTINUE";
+  public const VERIFICATION_STATUS_NOT_CHECKED = "NOT_CHECKED";
+  public const VERIFICATION_STATUS_PASSED = "PASSED";
+  public const VERIFICATION_STATUS_FAILED = "FAILED";
+  public const VERIFICATION_STATUS_CONTINUE = "CONTINUE";
   public $verificationStatus;
 
-  const LIABILITY_UNKNOWN = "UNKNOWN";
-  const LIABILITY_MERCHANT = "MERCHANT";
-  const LIABILITY_ISSUER = "ISSUER";
+  public const LIABILITY_UNKNOWN = "UNKNOWN";
+  public const LIABILITY_MERCHANT = "MERCHANT";
+  public const LIABILITY_ISSUER = "ISSUER";
   public $liability;
 
   /**
@@ -225,31 +225,31 @@ class ChargeTransaction extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'requestedAmount')
+    if($property === 'requestedAmount')
     {
       $this->requestedAmount = Money::fromSource($value);
       return;
     }
 
-    if($property == 'transactedAmount')
+    if($property === 'transactedAmount')
     {
       $this->transactedAmount = Money::fromSource($value);
       return;
     }
 
-    if($property == 'details')
+    if($property === 'details')
     {
       $this->details = TransactionDetail::manyFromSource($value);
       return;
     }
 
-    if($property == 'attemptDetail')
+    if($property === 'attemptDetail')
     {
       $this->attemptDetail = AttemptDetail::fromSource($value);
       return;
     }
 
-    if($property == 'responseDetail')
+    if($property === 'responseDetail')
     {
       $this->responseDetail = ResponseDetail::fromSource($value);
       return;

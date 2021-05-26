@@ -26,30 +26,30 @@ class Method extends WebhookFoundation
    */
   public $name;
 
-  const TYPE_CARD = "CARD";
-  const TYPE_DIGITALWALLET = "DIGITALWALLET";
-  const TYPE_DIRECTDEBIT = "DIRECTDEBIT";
-  const TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
+  public const TYPE_CARD = "CARD";
+  public const TYPE_DIGITALWALLET = "DIGITALWALLET";
+  public const TYPE_DIRECTDEBIT = "DIRECTDEBIT";
+  public const TYPE_CRYPTOCURRENCY = "CRYPTOCURRENCY";
   /**
    * Payment method type
    *
    */
   public $type;
 
-  const PROVIDER_FORM = "FORM";
-  const PROVIDER_PAYPAL = "PAYPAL";
-  const PROVIDER_APPLEPAY = "APPLEPAY";
-  const PROVIDER_GOOGLEPAY = "GOOGLEPAY";
-  const PROVIDER_AMAZONPAY = "AMAZONPAY";
+  public const PROVIDER_FORM = "FORM";
+  public const PROVIDER_PAYPAL = "PAYPAL";
+  public const PROVIDER_APPLEPAY = "APPLEPAY";
+  public const PROVIDER_GOOGLEPAY = "GOOGLEPAY";
+  public const PROVIDER_AMAZONPAY = "AMAZONPAY";
   /**
    * Payment method type
    *
    */
   public $provider;
 
-  const INPUT_TYPE_PHYSICAL = "PHYSICAL";
-  const INPUT_TYPE_VIRTUAL = "VIRTUAL";
-  const INPUT_TYPE_PROXY = "PROXY";
+  public const INPUT_TYPE_PHYSICAL = "PHYSICAL";
+  public const INPUT_TYPE_VIRTUAL = "VIRTUAL";
+  public const INPUT_TYPE_PROXY = "PROXY";
   public $inputType;
 
   /**
@@ -80,10 +80,10 @@ class Method extends WebhookFoundation
    */
   public $info;
 
-  const STATUS_ACTIVE = "ACTIVE";
-  const STATUS_PENDING = "PENDING";
-  const STATUS_CANCELLED = "CANCELLED";
-  const STATUS_SUSPENDED = "SUSPENDED";
+  public const STATUS_ACTIVE = "ACTIVE";
+  public const STATUS_PENDING = "PENDING";
+  public const STATUS_CANCELLED = "CANCELLED";
+  public const STATUS_SUSPENDED = "SUSPENDED";
   /**
    * Status of payment method
    *

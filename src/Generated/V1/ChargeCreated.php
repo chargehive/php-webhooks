@@ -12,11 +12,11 @@ class ChargeCreated extends WebhookFoundation
    */
   public $chargeUuid;
 
-  const CHARGE_INTENT_METHOD_ADD = "METHOD_ADD";
-  const CHARGE_INTENT_METHOD_REFRESH = "METHOD_REFRESH";
-  const CHARGE_INTENT_METHOD_VERIFY = "METHOD_VERIFY";
-  const CHARGE_INTENT_CAPTURE = "CAPTURE";
-  const CHARGE_INTENT_REFUND = "REFUND";
+  public const CHARGE_INTENT_METHOD_ADD = "METHOD_ADD";
+  public const CHARGE_INTENT_METHOD_REFRESH = "METHOD_REFRESH";
+  public const CHARGE_INTENT_METHOD_VERIFY = "METHOD_VERIFY";
+  public const CHARGE_INTENT_CAPTURE = "CAPTURE";
+  public const CHARGE_INTENT_REFUND = "REFUND";
   /**
    * The intent of this charge
    *
@@ -24,11 +24,11 @@ class ChargeCreated extends WebhookFoundation
    */
   public $chargeIntent;
 
-  const CONTRACT_NONE = "NONE";
-  const CONTRACT_PAYMENT = "PAYMENT";
-  const CONTRACT_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
-  const CONTRACT_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
-  const CONTRACT_ONECLICK = "ONECLICK";
+  public const CONTRACT_NONE = "NONE";
+  public const CONTRACT_PAYMENT = "PAYMENT";
+  public const CONTRACT_SUBSCRIPTION_INITIAL = "SUBSCRIPTION_INITIAL";
+  public const CONTRACT_SUBSCRIPTION_RENEWAL = "SUBSCRIPTION_RENEWAL";
+  public const CONTRACT_ONECLICK = "ONECLICK";
   public $contract;
 
   /**
@@ -59,7 +59,7 @@ class ChargeCreated extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'amount')
+    if($property === 'amount')
     {
       $this->amount = Money::fromSource($value);
       return;

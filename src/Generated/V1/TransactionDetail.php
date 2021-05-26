@@ -19,29 +19,29 @@ class TransactionDetail extends WebhookFoundation
    */
   public $actorVersion;
 
-  const ACTOR_TYPE_CONSUMER = "CONSUMER";
-  const ACTOR_TYPE_MERCHANT = "MERCHANT";
-  const ACTOR_TYPE_CHARGEHIVE = "CHARGEHIVE";
-  const ACTOR_TYPE_WALLET = "WALLET";
-  const ACTOR_TYPE_CONNECTOR = "CONNECTOR";
-  const ACTOR_TYPE_PAYMENT_PROCESSOR = "PAYMENT_PROCESSOR";
-  const ACTOR_TYPE_PAYMENT_NETWORK = "PAYMENT_NETWORK";
-  const ACTOR_TYPE_ACQUIRING_BANK = "ACQUIRING_BANK";
-  const ACTOR_TYPE_ISSUING_BANK = "ISSUING_BANK";
-  const ACTOR_TYPE_RECOVERY_AGENT = "RECOVERY_AGENT";
-  const ACTOR_TYPE_EXCHANGE = "EXCHANGE";
-  const ACTOR_TYPE_POLICY = "POLICY";
+  public const ACTOR_TYPE_CONSUMER = "CONSUMER";
+  public const ACTOR_TYPE_MERCHANT = "MERCHANT";
+  public const ACTOR_TYPE_CHARGEHIVE = "CHARGEHIVE";
+  public const ACTOR_TYPE_WALLET = "WALLET";
+  public const ACTOR_TYPE_CONNECTOR = "CONNECTOR";
+  public const ACTOR_TYPE_PAYMENT_PROCESSOR = "PAYMENT_PROCESSOR";
+  public const ACTOR_TYPE_PAYMENT_NETWORK = "PAYMENT_NETWORK";
+  public const ACTOR_TYPE_ACQUIRING_BANK = "ACQUIRING_BANK";
+  public const ACTOR_TYPE_ISSUING_BANK = "ISSUING_BANK";
+  public const ACTOR_TYPE_RECOVERY_AGENT = "RECOVERY_AGENT";
+  public const ACTOR_TYPE_EXCHANGE = "EXCHANGE";
+  public const ACTOR_TYPE_POLICY = "POLICY";
   /**
    * Role of the party in the transaction
    *
    */
   public $actorType;
 
-  const FAILURE_TYPE_NONE = "NONE";
-  const FAILURE_TYPE_SOFT = "SOFT";
-  const FAILURE_TYPE_HARD = "HARD";
-  const FAILURE_TYPE_RETRY = "RETRY";
-  const FAILURE_TYPE_INTERNAL = "INTERNAL";
+  public const FAILURE_TYPE_NONE = "NONE";
+  public const FAILURE_TYPE_SOFT = "SOFT";
+  public const FAILURE_TYPE_HARD = "HARD";
+  public const FAILURE_TYPE_RETRY = "RETRY";
+  public const FAILURE_TYPE_INTERNAL = "INTERNAL";
   public $failureType;
 
   /**
@@ -87,9 +87,9 @@ class TransactionDetail extends WebhookFoundation
    */
   public $transactionId;
 
-  const LIABILITY_UNKNOWN = "UNKNOWN";
-  const LIABILITY_MERCHANT = "MERCHANT";
-  const LIABILITY_ISSUER = "ISSUER";
+  public const LIABILITY_UNKNOWN = "UNKNOWN";
+  public const LIABILITY_MERCHANT = "MERCHANT";
+  public const LIABILITY_ISSUER = "ISSUER";
   public $liability;
 
   /**
@@ -132,31 +132,31 @@ class TransactionDetail extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'requestedAmount')
+    if($property === 'requestedAmount')
     {
       $this->requestedAmount = Money::fromSource($value);
       return;
     }
 
-    if($property == 'processedAmount')
+    if($property === 'processedAmount')
     {
       $this->processedAmount = Money::fromSource($value);
       return;
     }
 
-    if($property == 'feeAmount')
+    if($property === 'feeAmount')
     {
       $this->feeAmount = Money::fromSource($value);
       return;
     }
 
-    if($property == 'threeDsResult')
+    if($property === 'threeDsResult')
     {
       $this->threeDsResult = ThreeDSResult::fromSource($value);
       return;
     }
 
-    if($property == 'responseDetail')
+    if($property === 'responseDetail')
     {
       $this->responseDetail = ResponseDetail::fromSource($value);
       return;

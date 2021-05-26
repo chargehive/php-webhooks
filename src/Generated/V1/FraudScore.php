@@ -12,12 +12,12 @@ class FraudScore extends WebhookFoundation
    */
   public $score;
 
-  const RISK_LEVEL_NOT_RATED = "NOT_RATED";
-  const RISK_LEVEL_NEGLIGIBLE = "NEGLIGIBLE";
-  const RISK_LEVEL_MINOR = "MINOR";
-  const RISK_LEVEL_MODERATE = "MODERATE";
-  const RISK_LEVEL_SIGNIFICANT = "SIGNIFICANT";
-  const RISK_LEVEL_SERVERE = "SERVERE";
+  public const RISK_LEVEL_NOT_RATED = "NOT_RATED";
+  public const RISK_LEVEL_NEGLIGIBLE = "NEGLIGIBLE";
+  public const RISK_LEVEL_MINOR = "MINOR";
+  public const RISK_LEVEL_MODERATE = "MODERATE";
+  public const RISK_LEVEL_SIGNIFICANT = "SIGNIFICANT";
+  public const RISK_LEVEL_SERVERE = "SERVERE";
   /**
    * Risk level for this score
    *
@@ -25,13 +25,13 @@ class FraudScore extends WebhookFoundation
    */
   public $riskLevel;
 
-  const FACTOR_VERIFICATION = "VERIFICATION";
-  const FACTOR_VALIDATION = "VALIDATION";
-  const FACTOR_VELOCITY = "VELOCITY";
-  const FACTOR_TRUST = "TRUST";
-  const FACTOR_DURATION = "DURATION";
-  const FACTOR_OTHER = "OTHER";
-  const FACTOR_ = "";
+  public const FACTOR_VERIFICATION = "VERIFICATION";
+  public const FACTOR_VALIDATION = "VALIDATION";
+  public const FACTOR_VELOCITY = "VELOCITY";
+  public const FACTOR_TRUST = "TRUST";
+  public const FACTOR_DURATION = "DURATION";
+  public const FACTOR_OTHER = "OTHER";
+  public const FACTOR_ = "";
   /**
    * The factor type
    *
@@ -39,29 +39,29 @@ class FraudScore extends WebhookFoundation
    */
   public $factor;
 
-  const FACTOR_ON_ADDRESS = "ADDRESS";
-  const FACTOR_ON_BROWSER = "BROWSER";
-  const FACTOR_ON_IP = "IP";
-  const FACTOR_ON_COUNTRY = "COUNTRY";
-  const FACTOR_ON_STATE = "STATE";
-  const FACTOR_ON_CITY = "CITY";
-  const FACTOR_ON_DEVICE = "DEVICE";
-  const FACTOR_ON_EMAIL = "EMAIL";
-  const FACTOR_ON_EMAIL_DOMAIN = "EMAIL_DOMAIN";
-  const FACTOR_ON_DATE = "DATE";
-  const FACTOR_ON_MERCHANT = "MERCHANT";
-  const FACTOR_ON_ISSUER = "ISSUER";
-  const FACTOR_ON_BIN = "BIN";
-  const FACTOR_ON_METHOD = "METHOD";
-  const FACTOR_ON_CUSTOMER = "CUSTOMER";
-  const FACTOR_ON_AMOUNT = "AMOUNT";
-  const FACTOR_ON_PHONE = "PHONE";
-  const FACTOR_ON_LANGUAGE = "LANGUAGE";
-  const FACTOR_ON_DISTANCE_TO_BILLING = "DISTANCE_TO_BILLING";
-  const FACTOR_ON_DISTANCE_TO_SHIPPING = "DISTANCE_TO_SHIPPING";
-  const FACTOR_ON_DISTANCE_TO_IP = "DISTANCE_TO_IP";
-  const FACTOR_ON_OTHER = "OTHER";
-  const FACTOR_ON_ = "";
+  public const FACTOR_ON_ADDRESS = "ADDRESS";
+  public const FACTOR_ON_BROWSER = "BROWSER";
+  public const FACTOR_ON_IP = "IP";
+  public const FACTOR_ON_COUNTRY = "COUNTRY";
+  public const FACTOR_ON_STATE = "STATE";
+  public const FACTOR_ON_CITY = "CITY";
+  public const FACTOR_ON_DEVICE = "DEVICE";
+  public const FACTOR_ON_EMAIL = "EMAIL";
+  public const FACTOR_ON_EMAIL_DOMAIN = "EMAIL_DOMAIN";
+  public const FACTOR_ON_DATE = "DATE";
+  public const FACTOR_ON_MERCHANT = "MERCHANT";
+  public const FACTOR_ON_ISSUER = "ISSUER";
+  public const FACTOR_ON_BIN = "BIN";
+  public const FACTOR_ON_METHOD = "METHOD";
+  public const FACTOR_ON_CUSTOMER = "CUSTOMER";
+  public const FACTOR_ON_AMOUNT = "AMOUNT";
+  public const FACTOR_ON_PHONE = "PHONE";
+  public const FACTOR_ON_LANGUAGE = "LANGUAGE";
+  public const FACTOR_ON_DISTANCE_TO_BILLING = "DISTANCE_TO_BILLING";
+  public const FACTOR_ON_DISTANCE_TO_SHIPPING = "DISTANCE_TO_SHIPPING";
+  public const FACTOR_ON_DISTANCE_TO_IP = "DISTANCE_TO_IP";
+  public const FACTOR_ON_OTHER = "OTHER";
+  public const FACTOR_ON_ = "";
   /**
    * What this factor is based on
    *

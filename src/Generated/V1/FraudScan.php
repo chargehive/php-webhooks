@@ -19,10 +19,10 @@ class FraudScan extends WebhookFoundation
    */
   public $fraudScanId;
 
-  const SUGGESTED_ACTION_NO_SUGGESTION = "NO_SUGGESTION";
-  const SUGGESTED_ACTION_REVIEW = "REVIEW";
-  const SUGGESTED_ACTION_ALLOW = "ALLOW";
-  const SUGGESTED_ACTION_DENY = "DENY";
+  public const SUGGESTED_ACTION_NO_SUGGESTION = "NO_SUGGESTION";
+  public const SUGGESTED_ACTION_REVIEW = "REVIEW";
+  public const SUGGESTED_ACTION_ALLOW = "ALLOW";
+  public const SUGGESTED_ACTION_DENY = "DENY";
   /**
    * Recommendation from the fraud scan
    *
@@ -49,13 +49,13 @@ class FraudScan extends WebhookFoundation
 
   protected function _set($property, $value)
   {
-    if($property == 'overallScore')
+    if($property === 'overallScore')
     {
       $this->overallScore = FraudScore::fromSource($value);
       return;
     }
 
-    if($property == 'subScores')
+    if($property === 'subScores')
     {
       $this->subScores = FraudScore::manyFromSource($value);
       return;

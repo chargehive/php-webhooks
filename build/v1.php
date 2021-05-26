@@ -6,15 +6,17 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $outputDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src'
   . DIRECTORY_SEPARATOR . 'Generated' . DIRECTORY_SEPARATOR . 'V1';
-if(!file_exists($outputDir))
+
+if(!file_exists($outputDir) && !mkdir($outputDir, 0777, true) && !is_dir($outputDir))
 {
-  mkdir($outputDir, 0777, true);
+  throw new RuntimeException(sprintf('Directory "%s" was not created', $outputDir));
 }
+
 $files = glob(__DIR__ . DIRECTORY_SEPARATOR . 'tmp_webhooks/*.json');
 $mutations = ['UPDATE' => [], 'CREATE' => []];
 $mutationCount = 0;
 
-function filenameToClass($file)
+function filenameToClass($file): string
 {
   return ucfirst($file);
 }
@@ -48,7 +50,7 @@ foreach($files as $file)
     {
       foreach($propertyDefinition->enum as $enum)
       {
-        $src[] = '  const '
+        $src[] = '  public const '
           . strtoupper(str_replace(' ', '_', Strings::splitOnCamelCase($property . '_' . $enum)))
           . ' = "' . addslashes($enum) . '";';
       }
@@ -63,7 +65,7 @@ foreach($files as $file)
 
     if(isset($propertyDefinition->type))
     {
-      if($propertyDefinition->type == "array" && isset($propertyDefinition->items))
+      if($propertyDefinition->type === "array" && isset($propertyDefinition->items))
       {
         if(isset($propertyDefinition->items->{'$ref'}))
         {
@@ -107,7 +109,7 @@ foreach($files as $file)
     $src[] = '  {';
     foreach($setters as $property => $setter)
     {
-      $src[] = '    if($property == \'' . $property . '\')';
+      $src[] = '    if($property === \'' . $property . '\')';
       $src[] = '    {';
       $src[] = '      $this->' . $property . ' = ' . $setter . ';';
       $src[] = '      return;';
@@ -125,7 +127,7 @@ foreach($files as $file)
   $data = implode(PHP_EOL, $src);
 
   $exists = file_exists($outputFile);
-  if(!$exists || file_get_contents($outputFile) != $data)
+  if(!$exists || file_get_contents($outputFile) !== $data)
   {
     file_put_contents($outputFile, $data);
     $mutations[$exists ? 'UPDATE' : 'CREATE'][] = $className;
@@ -135,7 +137,7 @@ foreach($files as $file)
 
 if($mutationCount > 0)
 {
-  $file = fopen('v1.changelog.md', 'a+');
+  $file = fopen('v1.changelog.md', 'ab+');
   if($file)
   {
     fwrite($file, "####Build Process @ " . date("Y-m-d H:i:s") . PHP_EOL);

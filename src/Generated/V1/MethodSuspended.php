@@ -10,7 +10,7 @@ class MethodSuspended extends WebhookFoundation
    *
    * @var string
    */
-  public $token;
+  public $methodID;
 
   /**
    * If the method was updated

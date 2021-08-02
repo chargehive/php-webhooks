@@ -6,18 +6,17 @@ use ChargeHive\Webhooks\WebhookFoundation;
 class MethodArchived extends WebhookFoundation
 {
   /**
-   * @var Method
+   * The ID of the method
+   *
+   * @var string
    */
-  public $method;
+  public $methodID;
 
-  protected function _set($property, $value)
-  {
-    if($property === 'method')
-    {
-      $this->method = Method::fromSource($value);
-      return;
-    }
+  /**
+   * If the method was updated
+   *
+   * @var boolean
+   */
+  public $success;
 
-    parent::_set($property, $value);
-  }
 }

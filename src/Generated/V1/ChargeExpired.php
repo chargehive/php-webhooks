@@ -47,4 +47,11 @@ class ChargeExpired extends WebhookFoundation
    */
   public $attemptNumber;
 
+  /**
+   * The charge transaction number
+   *
+   * @var number
+   */
+  public $transactionNumber;
+
 }

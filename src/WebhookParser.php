@@ -14,6 +14,7 @@ use ChargeHive\Webhooks\Generated\V1\MethodModified;
 use ChargeHive\Webhooks\Generated\V1\MethodRefreshed;
 use ChargeHive\Webhooks\Generated\V1\MethodUnlocked;
 use ChargeHive\Webhooks\Generated\V1\RefundExpired;
+use ChargeHive\Webhooks\Generated\V1\TransactionStopped;
 use ChargeHive\Webhooks\Generated\V1\Verify;
 use ChargeHive\Webhooks\Generated\V1\Webhook;
 use InvalidArgumentException;
@@ -101,6 +102,9 @@ class WebhookParser
         break;
       case Webhook::TYPE_REFUND_EXPIRED:
         $hook->data = RefundExpired::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_TRANSACTION_STOPPED:
+        $hook->data = TransactionStopped::fromSource($this->_decodeJson($hook->data));
         break;
     }
 

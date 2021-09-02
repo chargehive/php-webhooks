@@ -55,11 +55,11 @@ class TransactionError extends WebhookFoundation
   public $transactionNumber;
 
   /**
-   * The reason why the trasaction was stopped
+   * The reason why the transaction encountered an error
    *
    * @var string
    */
-  public $stopReason;
+  public $reason;
 
   /**
    * The type of transaction

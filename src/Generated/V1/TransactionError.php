@@ -3,7 +3,7 @@ namespace ChargeHive\Webhooks\Generated\V1;
 
 use ChargeHive\Webhooks\WebhookFoundation;
 
-class TransactionStopped extends WebhookFoundation
+class TransactionError extends WebhookFoundation
 {
   /**
    * Unique ID for the charge that has been expired

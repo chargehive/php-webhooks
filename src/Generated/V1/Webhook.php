@@ -26,7 +26,7 @@ class Webhook extends WebhookFoundation
   public const TYPE_METHOD_UNLOCKED = "methodUnlocked";
   public const TYPE_FRAUD_SCAN = "fraudScan";
   public const TYPE_VERIFY = "verify";
-  public const TYPE_TRANSACTION_STOPPED = "transactionStopped";
+  public const TYPE_TRANSACTION_ERROR = "transactionError";
   /**
    * Notification type
    *

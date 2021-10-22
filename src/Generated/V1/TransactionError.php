@@ -68,4 +68,11 @@ class TransactionError extends WebhookFoundation
    */
   public $transactionType;
 
+  /**
+   * Time the error occurred
+   *
+   * @var number
+   */
+  public $timestamp;
+
 }

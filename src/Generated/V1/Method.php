@@ -90,4 +90,39 @@ class Method extends WebhookFoundation
    */
   public $status;
 
+  /**
+   * Unique ID for the payments underlying token
+   *
+   * @var string
+   */
+  public $tokenID;
+
+  /**
+   * ID for the billing profile
+   *
+   * @var string
+   */
+  public $billingProfileID;
+
+  /**
+   * Unique Fingerprint for the method across all methods by this profile
+   *
+   * @var string
+   */
+  public $profileFingerprint;
+
+  /**
+   * Unique Fingerprint for the method across the merchant
+   *
+   * @var string
+   */
+  public $merchantFingerprint;
+
+  /**
+   * The expiry date of the underlying token
+   *
+   * @var number
+   */
+  public $tokenExpiry;
+
 }

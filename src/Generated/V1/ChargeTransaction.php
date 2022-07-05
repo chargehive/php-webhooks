@@ -223,6 +223,11 @@ class ChargeTransaction extends WebhookFoundation
    */
   public $arn;
 
+  /**
+   * @var FraudScan[]
+   */
+  public $fraudScanResults;
+
   protected function _set($property, $value)
   {
     if($property === 'requestedAmount')
@@ -252,6 +257,12 @@ class ChargeTransaction extends WebhookFoundation
     if($property === 'responseDetail')
     {
       $this->responseDetail = ResponseDetail::fromSource($value);
+      return;
+    }
+
+    if($property === 'fraudScanResults')
+    {
+      $this->fraudScanResults = FraudScan::manyFromSource($value);
       return;
     }
 

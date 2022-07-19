@@ -19,6 +19,13 @@ class FraudScan extends WebhookFoundation
    */
   public $fraudScanId;
 
+  /**
+   * Connector used for this fraud scan
+   *
+   * @var string
+   */
+  public $connectorLibrary;
+
   public const SUGGESTED_ACTION_NO_SUGGESTION = "NO_SUGGESTION";
   public const SUGGESTED_ACTION_REVIEW = "REVIEW";
   public const SUGGESTED_ACTION_ALLOW = "ALLOW";

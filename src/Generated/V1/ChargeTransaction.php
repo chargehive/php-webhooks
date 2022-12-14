@@ -13,6 +13,13 @@ class ChargeTransaction extends WebhookFoundation
   public $chargeUuid;
 
   /**
+   * Billing Profile ID of the charge
+   *
+   * @var string
+   */
+  public $billingProfileId;
+
+  /**
    * Unique transaction ID for this transaction
    *
    * @var string

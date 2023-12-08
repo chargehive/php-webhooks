@@ -45,6 +45,13 @@ class ChargeTransaction extends WebhookFoundation
   public $paymentMethodInputType;
 
   /**
+   * Payment Method Issuer, e.g. HSBC
+   *
+   * @var string
+   */
+  public $paymentMethodIssuer;
+
+  /**
    * ID for the payment method token used
    *
    * @var string

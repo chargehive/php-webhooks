@@ -54,6 +54,13 @@ class FraudScan extends WebhookFoundation
    */
   public $subScores;
 
+  /**
+   * References associated with this scan
+   *
+   * @var object
+   */
+  public $references;
+
   protected function _set($property, $value)
   {
     if($property === 'overallScore')

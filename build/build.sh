@@ -13,7 +13,7 @@ else
   (git clone https://github.com/chargehive/webhooks.git tmp_webhooks && cd $TMP_PROTO_PATH)
 fi
 
-php ./v1.php
+/opt/homebrew/opt/php@7.4/bin/php ./v1.php
 rm -rf ./tmp_webhooks
 
 git add ../src/Generated/*

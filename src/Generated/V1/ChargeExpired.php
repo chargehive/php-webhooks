@@ -54,4 +54,25 @@ class ChargeExpired extends WebhookFoundation
    */
   public $transactionNumber;
 
+  /**
+   * ID of the policy triggering the expiry
+   *
+   * @var string
+   */
+  public $policyID;
+
+  /**
+   * Reason for the charge expiry
+   *
+   * @var string
+   */
+  public $reason;
+
+  /**
+   * Reason code for the expiry
+   *
+   * @var number
+   */
+  public $reasonCode;
+
 }

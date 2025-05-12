@@ -3,6 +3,7 @@ namespace ChargeHive\Webhooks;
 
 use ChargeHive\Webhooks\Generated\V1\ChargeCancel;
 use ChargeHive\Webhooks\Generated\V1\ChargeCreated;
+use ChargeHive\Webhooks\Generated\V1\ChargeCredit;
 use ChargeHive\Webhooks\Generated\V1\ChargeExpired;
 use ChargeHive\Webhooks\Generated\V1\ChargeModified;
 use ChargeHive\Webhooks\Generated\V1\ChargeTransaction;
@@ -69,6 +70,9 @@ class WebhookParser
         break;
       case Webhook::TYPE_CHARGE_TRANSACTION:
         $hook->data = ChargeTransaction::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_CHARGE_CREDIT:
+        $hook->data = ChargeCredit::fromSource($this->_decodeJson($hook->data));
         break;
       case Webhook::TYPE_CHARGE_CANCEL:
         $hook->data = ChargeCancel::fromSource($this->_decodeJson($hook->data));
